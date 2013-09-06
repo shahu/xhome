@@ -1,0 +1,11 @@
+bin
+gen
+.settings
+lint.xml
+*.apk
+*.class
+build.xml
+local.properties
+artifact
+obj
+.project

@@ -1,0 +1,17 @@
+--style=java
+-n
+--lineend=linux
+--recursive
+--keep-one-line-statements
+--add-brackets
+--pad-oper
+--unpad-paren
+--indent-col1-comments
+--indent-labels
+--min-conditional-indent=0
+--break-blocks
+--break-blocks=all
+--indent-classes
+--indent-switches
+--indent=spaces=4
+--formatted
