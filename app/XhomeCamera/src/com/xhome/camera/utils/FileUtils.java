@@ -1,15 +1,28 @@
 package com.xhome.camera.utils;
 
+import android.R.string;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ContentHandler;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class FileUtils {
     private static final String TAG = FileUtils.class.getSimpleName();
+
+    public static final String CAMERA_NAME_KEY = "camera_name";
+
+    public static final String CAMERA_ID_KEY = "camera_id";
 
     public boolean saveContentToSDCard(String fileName, String content) throws IOException {
         boolean isExternalStorageAvailable = false; // SD卡可读写的标志位
@@ -79,6 +92,42 @@ public class FileUtils {
                 fos.close();
             }
         }
+    }
+
+    public static List<String> readFileFromData(Context context, String fileName) throws IOException {
+        List<String> list = new ArrayList<String>();
+        FileInputStream fin = null;
+        InputStreamReader in = null;
+        BufferedReader br = null;
+
+        try {
+            fin = context.openFileInput(fileName);
+            in = new InputStreamReader(fin, "utf-8");
+            br = new BufferedReader(in);
+            String line = "";
+
+            while(null != (line = br.readLine())) {
+                list.add(line);
+            }
+
+        } catch(Exception e) {
+            Log.e(TAG, "" + e);
+
+        } finally {
+            if(null != fin) {
+                fin.close();
+            }
+
+            if(null != in) {
+                in.close();
+            }
+
+            if(null != br) {
+                br.close();
+            }
+        }
+
+        return list;
     }
 
     public void saveAppend(Context context, String fileNameStr, String fileContentStr)
