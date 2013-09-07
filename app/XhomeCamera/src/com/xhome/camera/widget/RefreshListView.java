@@ -166,7 +166,7 @@ public class RefreshListView extends ListView implements OnScrollListener {
                                 mHandler.sendMessage(msg);
 
                                 try {
-                                    sleep(5);
+                                    sleep(50);
 
                                 } catch(InterruptedException e) {
                                     e.printStackTrace();

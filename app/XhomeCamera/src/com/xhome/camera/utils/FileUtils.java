@@ -1,6 +1,6 @@
+
 package com.xhome.camera.utils;
 
-import android.R.string;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
@@ -11,11 +11,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.ContentHandler;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class FileUtils {
     private static final String TAG = FileUtils.class.getSimpleName();
@@ -45,10 +42,11 @@ public class FileUtils {
         return isExternalStorageAvailable;
     }
 
-    public void saveContentToLocal(Context context, String fileName, String content)
+    public static void saveContentToLocal(Context context, String fileName, String content)
     throws IOException {
         FileOutputStream fileOutputStream = context.openFileOutput(fileName, Context.MODE_APPEND);
         fileOutputStream.write(content.getBytes());
+        fileOutputStream.write("\r\n".getBytes());
 
         if(fileOutputStream != null) {
             fileOutputStream.close();
@@ -94,7 +92,8 @@ public class FileUtils {
         }
     }
 
-    public static List<String> readFileFromData(Context context, String fileName) throws IOException {
+    public static List<String> readFileFromData(Context context, String fileName)
+    throws IOException {
         List<String> list = new ArrayList<String>();
         FileInputStream fin = null;
         InputStreamReader in = null;
@@ -130,11 +129,137 @@ public class FileUtils {
         return list;
     }
 
-    public void saveAppend(Context context, String fileNameStr, String fileContentStr)
-    throws IOException {
-        // 追加操作模式:不覆盖源文件，但是同样其它应用无法访问该文件
-        FileOutputStream fos = context.openFileOutput(fileNameStr, Context.MODE_APPEND);
-        fos.write(fileContentStr.getBytes());
-        fos.close();
+    public static boolean isFileExists(String fileName) {
+        if(fileName == null || (fileName = fileName.trim()).equals("")) {
+            return false;
+        }
+
+        File file = new File(fileName);
+        return isFileExists(file);
+    }
+
+    public static boolean isFileExists(File file) {
+        if(file == null) {
+            return false;
+        }
+
+        return file.exists();
+    }
+
+    public static boolean isDirectory(File file) {
+        if(file == null) {
+            return false;
+        }
+
+        return file.isDirectory();
+    }
+
+    public static boolean isDirectory(String fileName) {
+        if(fileName == null || (fileName = fileName.trim()).equals("")) {
+            return false;
+        }
+
+        File file = new File(fileName);
+        return isDirectory(file);
+    }
+
+    public static boolean createOrExistsFolder(File file) {
+        if(file == null) {
+            return false;
+        }
+
+        boolean result = false;
+
+        if(isFileExists(file) && isDirectory(file)) {
+            // 如果file存在且是文件夹，返回true
+            return true;
+        }
+
+        // 如果文件夹不存在，创建文件夹
+        if(file.mkdirs()) {
+            // 创建成功返回true
+            result = true;
+
+        } else {
+            // 创建失败返回false
+            result = false;
+        }
+
+        return result;
+    }
+
+    public static boolean createOrExistsFolder(String fileName) {
+        if(fileName == null || (fileName = fileName.trim()).equals("")) {
+            return false;
+        }
+
+        File file = new File(fileName);
+        return createOrExistsFolder(file);
+    }
+
+    public static boolean createOrExistsFile(String fileName) {
+        if(fileName == null || (fileName = fileName.trim()).equals("")) {
+            return false;
+        }
+
+        File file = new File(fileName);
+
+        return createOrExistsFile(file);
+    }
+
+    public static boolean createOrExistsFile(File file) {
+        if(file == null) {
+            return false;
+        }
+
+        boolean result = false;
+
+        if(isFileExists(file) && isFile(file)) {
+            // 判断文件是否存在且为文件，如果存在结果为true
+            return true;
+        }
+
+        // 如果文件不存在，创建文件
+        // 先创建文件夹，否则不会成功
+        File parentFile = file.getParentFile();
+
+        if(!createOrExistsFolder(parentFile)) {
+            // 如果父文件夹创建不成功，返回false
+            return false;
+        }
+
+        try {
+            if(file.createNewFile()) {
+                // 创建成功返回true
+                result = true;
+
+            } else {
+                // 创建失败返回false
+                result = false;
+            }
+
+        } catch(IOException e) {
+            e.printStackTrace();
+            result = false;
+        }
+
+        return result;
+    }
+
+    public static boolean isFile(File file) {
+        if(file == null) {
+            return false;
+        }
+
+        return file.isFile();
+    }
+
+    public static boolean isFile(String fileName) {
+        if(fileName == null || (fileName = fileName.trim()).equals("")) {
+            return false;
+        }
+
+        File file = new File(fileName);
+        return isFile(file);
     }
 }

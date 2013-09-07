@@ -11,5 +11,6 @@
     <string name="app_list_footer_more">更多</string>
     <string name="app_list_footer_loading">正在加载</string>
     <string name="btn_add">添加</string>
+    <string name="camera_list">摄像头列表</string>
 
 </resources>
