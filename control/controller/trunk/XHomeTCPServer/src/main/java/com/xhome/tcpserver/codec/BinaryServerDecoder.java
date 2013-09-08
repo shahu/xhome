@@ -13,18 +13,21 @@ import org.jboss.netty.handler.codec.frame.FrameDecoder;
 import com.xhome.common.bean.Header;
 import com.xhome.common.bean.Message;
 import com.xhome.common.util.ProtocolUtil;
+import com.xhome.tcpserver.constant.Constant;
 
 public class BinaryServerDecoder  extends FrameDecoder {
 
     private static final Logger logger = Logger.getLogger(BinaryServerDecoder.class);
+
+
 
     @Override
     protected Object decode(ChannelHandlerContext ctx, Channel channel,
                             ChannelBuffer buffer) throws Exception {
         logger.info("binary decode start.");
 
-        if(buffer.readableBytes() < 24) {
-            logger.info("Header size<24");
+        if(buffer.readableBytes() < Constant.HEADER_SIZE) {
+            logger.info("Header size<" + Constant.HEADER_SIZE);
             return null;
         }
 
@@ -34,7 +37,6 @@ public class BinaryServerDecoder  extends FrameDecoder {
         header.setSeqNo(buffer.readInt());
         header.setTimeStamp(buffer.readInt());
         header.setReserved(buffer.readInt());
-        header.setCommandType(buffer.readInt());
         header.setBodyLength(buffer.readInt());
         logger.info("Header info: " + header.toString());
 
@@ -55,6 +57,7 @@ public class BinaryServerDecoder  extends FrameDecoder {
             return null;
         }
 
+        msg.setMessageType((Integer)data.get(0));
         msg.setData(data);
 
         logger.info("binary decode end.");

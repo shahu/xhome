@@ -23,6 +23,7 @@ import org.jboss.netty.util.HashedWheelTimer;
 import org.jboss.netty.util.Timer;
 
 import com.xhome.tcpserver.api.IContorlServer;
+import com.xhome.tcpserver.channelgroup.XHomeChannelGroup;
 import com.xhome.tcpserver.codec.BinaryClientEncoder;
 import com.xhome.tcpserver.codec.BinaryServerDecoder;
 import com.xhome.tcpserver.codec.BinaryServerEncoder;
@@ -33,11 +34,10 @@ public class TCPServer implements IContorlServer {
 
     public int port = 8080;
     public static final Logger logger = Logger.getLogger(TCPServer.class);
-    public ChannelGroup allChannels = new DefaultChannelGroup("TCPServer");
+    public static XHomeChannelGroup allChannels = new XHomeChannelGroup("TCPServer");
     private ServerBootstrap serverBootstrap = new ServerBootstrap(
         new NioServerSocketChannelFactory(Executors.newCachedThreadPool(),
                                           Executors.newCachedThreadPool()));
-
     public TCPServer(int port) {
         this.port = port;
     }
@@ -70,7 +70,6 @@ public class TCPServer implements IContorlServer {
 
         try {
             Channel channel = serverBootstrap.bind(new InetSocketAddress(port));
-            allChannels.add(channel);
             logger.info("server is started on port " + port);
             return true;
 
@@ -96,9 +95,9 @@ public class TCPServer implements IContorlServer {
             /**
              * 主动关闭服务器
              */
-            ChannelGroupFuture future = allChannels.close();
-            future.awaitUninterruptibly();// 阻塞，直到服务器关闭
-            // serverBootstrap.releaseExternalResources();
+            //ChannelGroupFuture future = allChannels.close();
+            //future.awaitUninterruptibly();// 阻塞，直到服务器关闭
+            serverBootstrap.releaseExternalResources();
 
         } catch(Exception e) {
             logger.error(e.getMessage(), e);
