@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Built-By: longhaowang
+Build-Jdk: 1.7.0_17
+Implementation-Title: Common
+Implementation-Vendor-Id: com.xhome.cloud.controller
+Created-By: Maven Integration for Eclipse
+Implementation-Version: 1.0.0-SNAPSHOT.${buildNumber}
+
