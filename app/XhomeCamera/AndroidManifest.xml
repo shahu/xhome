@@ -23,6 +23,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+         <activity
+            android:name="com.xhome.camera.activity.CameraShowActivity"
+            android:label="@string/app_name" 
+            android:theme="@style/settitle">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="com.xhome.camera.activity.ImagePagerActivity"
+             android:label="@string/app_name" 
+            android:theme="@style/settitle">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
