@@ -1,30 +1,5 @@
+
 package com.xhome.camera.activity;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.DialogInterface.OnDismissListener;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -37,256 +12,320 @@ import com.xhome.camera.R;
 import com.xhome.camera.model.Constants;
 import com.xhome.camera.utils.FileUtils;
 import com.xhome.camera.utils.StringUtils;
-import com.xhome.camera.widget.RefreshListView;
+import com.xhome.camera.view.RefreshListView;
+import com.xhome.camera.view.RefreshListView.IXListViewListener;
 
-public class CameraListActivity extends Activity {
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.DialogInterface.OnDismissListener;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-	private static final String TAG = CameraListActivity.class.getSimpleName();
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
-	private RefreshListView refreshListView;
+public class CameraListActivity extends Activity implements IXListViewListener {
 
-	DisplayImageOptions options;
+    private static final String TAG = CameraListActivity.class.getSimpleName();
 
-	protected ImageLoader imageLoader = ImageLoader.getInstance();
+    private RefreshListView refreshListView;
 
-	private Button btnAdd;
+    DisplayImageOptions options;
 
-	private TextView txtTitle;
+    protected ImageLoader imageLoader = ImageLoader.getInstance();
 
-	private EditText cidEditText;
+    private Button btnAdd;
 
-	CameraAdapter cameraAdapter;
+    private TextView txtTitle;
 
-	AlertDialog alertDialog;
+    private EditText cidEditText;
 
-	AlertDialog.Builder builder;
+    CameraAdapter cameraAdapter;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-		setContentView(R.layout.activity_camera_list);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
-				R.layout.camera_list_title);
-		init();
-		imageLoader.init(ImageLoaderConfiguration.createDefault(this));
-		options = new DisplayImageOptions.Builder()
-				.showImageOnLoading(R.drawable.ic_launcher)
-				.showImageForEmptyUri(R.drawable.ic_launcher)
-				.showImageOnFail(R.drawable.ic_launcher).cacheInMemory(true)
-				.cacheOnDisc(true).displayer(new RoundedBitmapDisplayer(20))
-				.build();
-	}
+    AlertDialog alertDialog;
 
-	private void init() {
-		refreshListView = (RefreshListView) findViewById(R.id.list_camera);
-		btnAdd = (Button) findViewById(R.id.btn_add);
-		txtTitle = (TextView) findViewById(R.id.txt_title);
-		txtTitle.setText(R.string.camera_list);
-		List<String> list = getCameraList();
-		cameraAdapter = new CameraAdapter(list);
-		refreshListView.setAdapter(cameraAdapter);
-		initDialog();
-		btnAdd.setOnClickListener(new View.OnClickListener() {
+    AlertDialog.Builder builder;
 
-			@Override
-			public void onClick(final View v) {
-				alertDialog.show();
-			}
-		});
-	}
+    private Handler handler;
 
-	private void initDialog() {
-		LayoutInflater inflater = getLayoutInflater();
-		final View layout = inflater.inflate(R.layout.add_camera,
-				(ViewGroup) findViewById(R.id.dialog));
-		cidEditText = (EditText) layout.findViewById(R.id.cidEditText);
-		builder = new AlertDialog.Builder(this);
-		builder.setTitle("请输入");
-		builder.setIcon(android.R.drawable.ic_dialog_info);
-		builder.setView(layout);
-		builder.setPositiveButton("确定", new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				String item = cidEditText.getText() + Constants.SEPARATE
-						+ Constants.IMAGES[0];
+    private SimpleDateFormat mSimpleDateFormat;
 
-				try {
-					FileUtils.saveContentToLocal(CameraListActivity.this,
-							Constants.FILE_NAME, item);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+        setContentView(R.layout.activity_camera_list);
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.camera_list_title);
+        init();
+        imageLoader.init(ImageLoaderConfiguration.createDefault(this));
+        options = new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.ic_launcher)
+        .showImageForEmptyUri(R.drawable.ic_launcher)
+        .showImageOnFail(R.drawable.ic_launcher).cacheInMemory(true).cacheOnDisc(true)
+        .displayer(new RoundedBitmapDisplayer(20)).build();
+    }
 
-				} catch (IOException e) {
-					Log.e(TAG, "" + e);
-				}
+    private void init() {
+        initRefreshListView();
+        btnAdd = (Button)findViewById(R.id.btn_add);
+        txtTitle = (TextView)findViewById(R.id.txt_title);
+        txtTitle.setText(R.string.camera_list);
+        List<String> list = getCameraList();
+        cameraAdapter = new CameraAdapter(list);
+        refreshListView.setAdapter(cameraAdapter);
+        initDialog();
+        btnAdd.setOnClickListener(new View.OnClickListener() {
 
-				dialog.dismiss();
-			}
-		});
-		builder.setNegativeButton("取消", new OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                alertDialog.show();
+            }
+        });
+        handler = new Handler();
+        mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+    }
 
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-		alertDialog = builder.create();
-		alertDialog.setOnDismissListener(new OnDismissListener() {
+    private void initRefreshListView() {
+        refreshListView = (RefreshListView)findViewById(R.id.list_camera);
+        refreshListView.setCacheColorHint(Color.TRANSPARENT);
+        refreshListView.setDivider(getResources().getDrawable(R.drawable.line));
+        refreshListView.setPullLoadEnable(false);
+        refreshListView.setXListViewListener(this);
+        refreshListView.setVerticalScrollBarEnabled(false);
+        refreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                Intent intent = new Intent(CameraListActivity.this, CameraShowActivity.class);
+                intent.putExtra("cid", "1");
+                startActivity(intent);
+            }
+        });
+    }
 
-			@Override
-			public void onDismiss(DialogInterface dialog) {
-				List<String> items = getCameraList();
-				cameraAdapter.items = items;
-				cameraAdapter.notifyDataSetChanged();
-			}
-		});
-	}
+    private void initDialog() {
+        LayoutInflater inflater = getLayoutInflater();
+        final View layout = inflater.inflate(R.layout.add_camera,
+                                             (ViewGroup)findViewById(R.id.dialog));
+        cidEditText = (EditText)layout.findViewById(R.id.cidEditText);
+        builder = new AlertDialog.Builder(this);
+        builder.setTitle("请输入");
+        builder.setIcon(android.R.drawable.ic_dialog_info);
+        builder.setView(layout);
+        builder.setPositiveButton("确定", new OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String item = cidEditText.getText() + Constants.SEPARATE + Constants.IMAGES[0];
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onResume()
-	 */
-	@Override
-	protected void onResume() {
-		super.onResume();
-		Log.d(TAG, "activity onResume");
-	}
+                try {
+                    FileUtils
+                    .saveContentToLocal(CameraListActivity.this, Constants.FILE_NAME, item);
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onDestroy()
-	 */
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		AnimateFirstDisplayListener.displayedImages.clear();
-	}
+                } catch(IOException e) {
+                    Log.e(TAG, "" + e);
+                }
 
-	private List<String> getCameraList() {
-		List<String> cameraList = new ArrayList<String>();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("取消", new OnClickListener() {
 
-		try {
-			cameraList = FileUtils.readFileFromData(this, Constants.FILE_NAME);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        alertDialog = builder.create();
+        alertDialog.setOnDismissListener(new OnDismissListener() {
 
-		} catch (IOException e) {
-			Log.e(TAG, "" + e);
-		}
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                List<String> items = getCameraList();
+                cameraAdapter.items = items;
+                cameraAdapter.notifyDataSetChanged();
+            }
+        });
+    }
 
-		Log.d(TAG, "list size:" + cameraList.size());
-		return cameraList;
-	}
+    /*
+     * (non-Javadoc)
+     * @see android.app.Activity#onResume()
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "activity onResume");
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+    /*
+     * (non-Javadoc)
+     * @see android.app.Activity#onDestroy()
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AnimateFirstDisplayListener.displayedImages.clear();
+    }
 
-	class CameraAdapter extends BaseAdapter {
-		public List<String> items;
+    private List<String> getCameraList() {
+        List<String> cameraList = new ArrayList<String>();
 
-		private final ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
+        try {
+            cameraList = FileUtils.readFileFromData(this, Constants.FILE_NAME);
 
-		private class ViewHolder {
-			public TextView text;
+        } catch(IOException e) {
+            Log.e(TAG, "" + e);
+        }
 
-			public ImageView image;
-		}
+        Log.d(TAG, "list size:" + cameraList.size());
+        return cameraList;
+    }
 
-		public CameraAdapter(List<String> items) {
-			this.items = items;
-		}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.widget.Adapter#getCount()
-		 */
-		@Override
-		public int getCount() {
-			return items.size();
-		}
+    class CameraAdapter extends BaseAdapter {
+        public List<String> items;
 
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.widget.Adapter#getItem(int)
-		 */
-		@Override
-		public Object getItem(int position) {
-			return position;
-		}
+        private final ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
 
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.widget.Adapter#getItemId(int)
-		 */
-		@Override
-		public long getItemId(int position) {
-			return position;
-		}
+        private class ViewHolder {
+            public TextView text;
 
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.widget.Adapter#getView(int, android.view.View,
-		 * android.view.ViewGroup)
-		 */
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			View view = convertView;
-			ViewHolder holder;
+            public ImageView image;
+        }
 
-			if (null == convertView) {
-				view = getLayoutInflater().inflate(R.layout.item_list_image,
-						null);
-				view.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View v) {
-						Intent intent = new Intent(getApplicationContext(),
-								CameraShowActivity.class);
-						intent.putExtra("cid", "1");
-						startActivity(intent);
-					}
-				});
-				holder = new ViewHolder();
-				holder.text = (TextView) view.findViewById(R.id.text);
-				holder.image = (ImageView) view.findViewById(R.id.image);
-				view.setTag(holder);
+        public CameraAdapter(List<String> items) {
+            this.items = items;
+        }
 
-			} else {
-				holder = (ViewHolder) view.getTag();
-			}
+        /*
+         * (non-Javadoc)
+         * @see android.widget.Adapter#getCount()
+         */
+        @Override
+        public int getCount() {
+            return items.size();
+        }
 
-			holder.text.setText(StringUtils.getCameraName(items.get(position)));
-			String url = StringUtils.getCameraUrl(items.get(position));
-			Log.d(TAG, "imageUrl:" + url);
-			imageLoader.displayImage(url, holder.image, options,
-					animateFirstListener);
-			return view;
-		}
-	}
+        /*
+         * (non-Javadoc)
+         * @see android.widget.Adapter#getItem(int)
+         */
+        @Override
+        public Object getItem(int position) {
+            return position;
+        }
 
-	private static class AnimateFirstDisplayListener extends
-			SimpleImageLoadingListener {
+        /*
+         * (non-Javadoc)
+         * @see android.widget.Adapter#getItemId(int)
+         */
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
 
-		static final List<String> displayedImages = Collections
-				.synchronizedList(new LinkedList<String>());
+        /*
+         * (non-Javadoc)
+         * @see android.widget.Adapter#getView(int, android.view.View,
+         * android.view.ViewGroup)
+         */
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = convertView;
+            ViewHolder holder;
 
-		@Override
-		public void onLoadingComplete(String imageUri, View view,
-				Bitmap loadedImage) {
-			if (loadedImage != null) {
-				ImageView imageView = (ImageView) view;
-				boolean firstDisplay = !displayedImages.contains(imageUri);
+            if(null == convertView) {
+                view = getLayoutInflater().inflate(R.layout.item_list_image, null);
+                holder = new ViewHolder();
+                holder.text = (TextView)view.findViewById(R.id.text);
+                holder.image = (ImageView)view.findViewById(R.id.image);
+                view.setTag(holder);
 
-				if (firstDisplay) {
-					FadeInBitmapDisplayer.animate(imageView, 500);
-					displayedImages.add(imageUri);
-				}
-			}
-		}
-	}
+            } else {
+                holder = (ViewHolder)view.getTag();
+            }
+
+            holder.text.setText(StringUtils.getCameraName(items.get(position)));
+            String url = StringUtils.getCameraUrl(items.get(position));
+            Log.d(TAG, "imageUrl:" + url);
+            imageLoader.displayImage(url, holder.image, options, animateFirstListener);
+            return view;
+        }
+    }
+
+    private static class AnimateFirstDisplayListener extends SimpleImageLoadingListener {
+
+        static final List<String> displayedImages = Collections
+                .synchronizedList(new LinkedList<String>());
+
+        @Override
+        public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+            if(loadedImage != null) {
+                ImageView imageView = (ImageView)view;
+                boolean firstDisplay = !displayedImages.contains(imageUri);
+
+                if(firstDisplay) {
+                    FadeInBitmapDisplayer.animate(imageView, 500);
+                    displayedImages.add(imageUri);
+                }
+            }
+        }
+    }
+
+    private void onLoad() {
+        refreshListView.stopRefresh();
+        refreshListView.stopLoadMore();
+        refreshListView.setRefreshTime(this.getString(R.string.app_list_header_refresh_last_update,
+                                       mSimpleDateFormat.format(new Date())));
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see com.xhome.camera.view.XListView.IXListViewListener#onRefresh()
+     */
+    @Override
+    public void onRefresh() {
+        handler.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                cameraAdapter.notifyDataSetChanged();
+                onLoad();
+            }
+        }, 2000);
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see com.xhome.camera.view.XListView.IXListViewListener#onLoadMore()
+     */
+    @Override
+    public void onLoadMore() {
+    }
 
 }

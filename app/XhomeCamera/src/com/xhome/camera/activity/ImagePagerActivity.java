@@ -13,7 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
+
 package com.xhome.camera.activity;
+
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
+import com.xhome.camera.R;
+import com.xhome.camera.utils.Constants.Extra;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -27,14 +37,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
-import com.xhome.camera.R;
-import com.xhome.camera.utils.Constants.Extra;
 
 /**
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
@@ -46,9 +48,10 @@ public class ImagePagerActivity extends Activity {
     DisplayImageOptions options;
 
     ViewPager pager;
-    
+
     protected ImageLoader imageLoader = ImageLoader.getInstance();
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_image_pager);
@@ -61,17 +64,13 @@ public class ImagePagerActivity extends Activity {
             pagerPosition = savedInstanceState.getInt(STATE_POSITION);
         }
 
-        options = new DisplayImageOptions.Builder()
-        .showImageForEmptyUri(R.drawable.ic_empty)
-        .showImageOnFail(R.drawable.ic_error)
-        .resetViewBeforeLoading(true)
-        .cacheOnDisc(true)
-        .imageScaleType(ImageScaleType.EXACTLY)
-        .bitmapConfig(Bitmap.Config.RGB_565)
-        .displayer(new FadeInBitmapDisplayer(300))
+        options = new DisplayImageOptions.Builder().showImageForEmptyUri(R.drawable.ic_empty)
+        .showImageOnFail(R.drawable.ic_error).resetViewBeforeLoading(true)
+        .cacheOnDisc(true).imageScaleType(ImageScaleType.EXACTLY)
+        .bitmapConfig(Bitmap.Config.RGB_565).displayer(new FadeInBitmapDisplayer(300))
         .build();
 
-        pager = (ViewPager) findViewById(R.id.pager);
+        pager = (ViewPager)findViewById(R.id.pager);
         pager.setAdapter(new ImagePagerAdapter(imageUrls));
         pager.setCurrentItem(pagerPosition);
     }
@@ -83,8 +82,9 @@ public class ImagePagerActivity extends Activity {
 
     private class ImagePagerAdapter extends PagerAdapter {
 
-        private String[] images;
-        private LayoutInflater inflater;
+        private final String[] images;
+
+        private final LayoutInflater inflater;
 
         ImagePagerAdapter(String[] images) {
             this.images = images;
@@ -93,7 +93,7 @@ public class ImagePagerActivity extends Activity {
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            ((ViewPager) container).removeView((View) object);
+            ((ViewPager)container).removeView((View)object);
         }
 
         @Override
@@ -108,17 +108,19 @@ public class ImagePagerActivity extends Activity {
         @Override
         public Object instantiateItem(ViewGroup view, int position) {
             View imageLayout = inflater.inflate(R.layout.item_pager_image, view, false);
-            ImageView imageView = (ImageView) imageLayout.findViewById(R.id.image);
-            final ProgressBar spinner = (ProgressBar) imageLayout.findViewById(R.id.loading);
+            ImageView imageView = (ImageView)imageLayout.findViewById(R.id.image);
+            final ProgressBar spinner = (ProgressBar)imageLayout.findViewById(R.id.loading);
 
-            imageLoader.displayImage(images[position], imageView, options, new SimpleImageLoadingListener() {
+            imageLoader.displayImage(images[position], imageView, options,
+            new SimpleImageLoadingListener() {
                 @Override
                 public void onLoadingStarted(String imageUri, View view) {
                     spinner.setVisibility(View.VISIBLE);
                 }
 
                 @Override
-                public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+                public void onLoadingFailed(String imageUri, View view,
+                                            FailReason failReason) {
                     String message = null;
 
                     switch(failReason.getType()) {
@@ -143,7 +145,8 @@ public class ImagePagerActivity extends Activity {
                             break;
                     }
 
-                    Toast.makeText(ImagePagerActivity.this, message, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ImagePagerActivity.this, message, Toast.LENGTH_SHORT)
+                    .show();
 
                     spinner.setVisibility(View.GONE);
                 }
@@ -154,7 +157,7 @@ public class ImagePagerActivity extends Activity {
                 }
             });
 
-            ((ViewPager) view).addView(imageLayout, 0);
+            ((ViewPager)view).addView(imageLayout, 0);
             return imageLayout;
         }
 

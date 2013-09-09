@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="scan_text_color">#f9fbfd</color>
+    <color name="bg_color">#FEFEFE</color>
+    <color name="text_color">#909090</color>
     
 </resources>
