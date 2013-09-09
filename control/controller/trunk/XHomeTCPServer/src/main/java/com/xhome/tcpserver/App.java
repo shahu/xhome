@@ -11,8 +11,8 @@ public class App {
     public static void main(String[] args) {
         int port = 8080;
         TCPServer server = new TCPServer(port);
-        server.start();
-
+        boolean isStart = server.start();
+        System.out.println(isStart ? "Start Ok!!!!!!" : "Start failed!!!!!");
     }
 
 }

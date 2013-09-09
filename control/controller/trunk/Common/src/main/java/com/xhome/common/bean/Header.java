@@ -1,12 +1,11 @@
 package com.xhome.common.bean;
 
 public class Header {
-    private Integer version;
-    private Integer seqNo;
-    private Integer timeStamp;
-    private Integer reserved;
-    private Integer commandType;
-    private Integer bodyLength;
+    private Integer version; //协议版本号
+    private Integer seqNo;		//消息序列号
+    private Integer timeStamp;	//时间戳
+    private Integer reserved;	//保留字段
+    private Integer bodyLength;	//Body长度
 
     public void setVersion(Integer version) {
         this.version = version;
@@ -40,13 +39,6 @@ public class Header {
         return reserved;
     }
 
-    public void setCommandType(Integer commandType) {
-        this.commandType = commandType;
-    }
-
-    public Integer getCommandType() {
-        return commandType;
-    }
 
     public void setBodyLength(Integer bodyLength) {
         this.bodyLength = bodyLength;
@@ -60,7 +52,7 @@ public class Header {
     public String toString() {
         return "Header [version=" + version + ", seqno=" + seqNo
                + ", timestamp=" + timeStamp + ", reserved=" + reserved
-               + ", commandtype=" + commandType + ", bodylength=" + bodyLength
+               + " bodylength=" + bodyLength
                + "]";
 
     }

@@ -12,5 +12,13 @@
     <string name="app_list_footer_loading">正在加载</string>
     <string name="btn_add">添加</string>
     <string name="camera_list">摄像头列表</string>
+    
+    <string name="back_txt">>></string>
+    <string name="camera_name">宝宝房间</string>
+    <string name="more">>></string>
+    <string name="current_view">实时画面</string>
+    <string name="date">9月9日</string>
+    <string name="descr_image">Image</string>
+    <string name="camera_move_txt">点我改变方向</string>
 
 </resources>

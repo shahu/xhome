@@ -1,20 +1,15 @@
 package com.xhome.tcpserver;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.jboss.netty.channel.ChannelFuture;
-import org.jboss.netty.channel.ChannelFutureListener;
 
 import com.xhome.common.bean.Header;
 import com.xhome.common.bean.Message;
-import com.xhome.common.dataenum.CommandType;
 import com.xhome.tcpserver.impl.TCPClient;
 
-public class App1 {
-
+public class CamApp {
     public static void main(String[] args) {
         int port = 8080;
         String host = "localhost";
@@ -25,15 +20,13 @@ public class App1 {
         if(null != channelFuture && channelFuture.isSuccess()) {
             Header header = new Header();
             header.setVersion(0);
-            header.setSeqNo(1);
+            header.setSeqNo(2);
 
             header.setReserved(0);
             List<Object> obj = new ArrayList<Object>();
-            obj.add(0);
-            obj.add(1);
-            obj.add(2);
-            obj.add(15);
+            obj.add(4);
             obj.add("1234-4567-890");
+            obj.add("cam1");
             Message sendMsg = new Message();
             sendMsg.setHeader(header);
             sendMsg.setData(obj);
@@ -54,8 +47,8 @@ public class App1 {
                 }
             }
 
+            System.out.println("wait close");
             client.stop();
         }
     }
-
 }

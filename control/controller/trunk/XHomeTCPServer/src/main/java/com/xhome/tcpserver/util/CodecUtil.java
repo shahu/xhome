@@ -17,14 +17,12 @@ public class CodecUtil {
     public static ChannelBuffer encodeMessage(Message msg) {
         if(null != msg) {
             ChannelBuffer headBuffer = ChannelBuffers.buffer(
-                                           ByteOrder.LITTLE_ENDIAN, 24);
+                                           ByteOrder.LITTLE_ENDIAN, 20);
             ChannelBuffer dataBuffer = ProtocolUtil.encode(msg.getData());
             headBuffer.writeInt(msg.getHeader().getVersion());
             headBuffer.writeInt(msg.getHeader().getSeqNo());
             headBuffer.writeInt(msg.getHeader().getTimeStamp());
             headBuffer.writeInt(msg.getHeader().getReserved());
-            headBuffer.writeInt(msg.getHeader().getCommandType());
-
             headBuffer.writeInt(dataBuffer.readableBytes());
             logger.info("Header buffer size: " + headBuffer.readableBytes());
             logger.info("Header buffer : " + headBuffer);
