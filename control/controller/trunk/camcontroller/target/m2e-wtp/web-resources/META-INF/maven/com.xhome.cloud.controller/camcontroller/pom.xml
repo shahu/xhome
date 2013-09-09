@@ -1,106 +1,17 @@
-<?xml version="1.0"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>controller</artifactId>
 		<groupId>com.xhome.cloud.controller</groupId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>Common</artifactId>
-	<name>Common</name>
-	<packaging>jar</packaging>
-	<url>http://maven.apache.org</url>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-	<build>
-		<resources>
-			<resource>
-				<filtering>false</filtering>
-				<directory>${basedir}/src/main/java</directory>
-				<targetPath>${project.build.directory}/conf</targetPath>
-				<includes>
-					<include>*.xml</include>
-					<include>*.properties</include>
-				</includes>
-			</resource>
-			<resource>
-				<filtering>false</filtering>
-				<directory>${basedir}/src/main/java</directory>
-				<targetPath>${project.build.directory}/shell</targetPath>
-				<includes>
-					<include>*.sh</include>
-					<include>*.bat</include>
-				</includes>
-			</resource>
-		</resources>
-		<plugins>
-		<!-- 
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>buildnumber-maven-plugin</artifactId>
-				<version>1.0</version>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>create</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<doCheck>false</doCheck>
-					<doUpdate>false</doUpdate>
-					<providerImplementations>
-						<svn>javasvn</svn>
-					</providerImplementations>
-				</configuration>
-			</plugin>
-			 -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>dependency-maven-plugin</artifactId>
-				<version>1.0</version>
-				<executions>
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>package</phase>
-						<configuration>
-							<outputDirectory>${project.build.directory}/lib</outputDirectory>
-							<excludeTransitive>true</excludeTransitive>
-							<excludeScope>test</excludeScope>
-							<includeScope>system</includeScope>
-							<includeScope>runtime</includeScope>
-							<includeScope>compile</includeScope>
-						</configuration>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<outputDirectory>${project.build.directory}/lib</outputDirectory>
-					<archive>
-						<index>true</index>
-						<manifest>
-							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-						</manifest>
-						<manifestEntries>
-							<Implementation-Version>${project.version}.${buildNumber}</Implementation-Version>
-						</manifestEntries>
-					</archive>
-					<finalName>${project.artifactId}-${project.version}</finalName>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
+	<artifactId>camcontroller</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>camcontroller Maven Webapp</name>
+	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -179,16 +90,16 @@
 			<artifactId>log4j</artifactId>
 		</dependency>
 		<dependency>
-		<groupId>io.netty</groupId>
-		<artifactId>netty</artifactId>
+			<groupId>io.netty</groupId>
+			<artifactId>netty</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- rabbit mq start -->
 		<dependency>
 			<groupId>org.springframework.amqp</groupId>
@@ -213,6 +124,48 @@
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.xhome.cloud.controller</groupId>
+			<artifactId>Common</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		
 	</dependencies>
+	<build>
+		<finalName>camcontroller</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<stopKey>foo</stopKey>
+					<stopPort>9999</stopPort>
+				</configuration>
+				<executions>
+					<execution>
+						<id>start-jetty</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<scanIntervalSeconds>0</scanIntervalSeconds>
+							<daemon>true</daemon>
+						</configuration>
+					</execution>
+					<execution>
+						<id>stop-jetty</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

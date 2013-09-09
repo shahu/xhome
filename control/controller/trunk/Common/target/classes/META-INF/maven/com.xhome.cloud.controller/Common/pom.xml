@@ -37,6 +37,7 @@
 			</resource>
 		</resources>
 		<plugins>
+		<!-- 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>buildnumber-maven-plugin</artifactId>
@@ -57,6 +58,7 @@
 					</providerImplementations>
 				</configuration>
 			</plugin>
+			 -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>dependency-maven-plugin</artifactId>
@@ -202,6 +204,15 @@
 		</dependency>
 		<!-- rabbit mq end -->
 
+		<!-- json processor -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>

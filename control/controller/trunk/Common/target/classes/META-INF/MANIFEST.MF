@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Built-By: longhaowang
-Build-Jdk: 1.7.0_17
+Built-By: shahu
+Build-Jdk: 1.7.0_21
 Implementation-Title: Common
 Implementation-Vendor-Id: com.xhome.cloud.controller
 Created-By: Maven Integration for Eclipse
