@@ -1,0 +1,8 @@
+main.c:
+    an example for coordicating with libxhome.so
+
+install:
+    copy the libxhome.so to /usr/lib
+
+compile:
+    with flag -lxhome
