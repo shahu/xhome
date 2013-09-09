@@ -19,6 +19,7 @@
 	<modules>
 		<module>XHomeTCPServer</module>
 		<module>Common</module>
+		<module>camcontroller</module>
 	</modules>
 
 	<build>

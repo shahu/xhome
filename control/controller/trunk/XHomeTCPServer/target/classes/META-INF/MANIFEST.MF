@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Built-By: longhaowang
-Build-Jdk: 1.7.0_17
+Built-By: shahu
+Build-Jdk: 1.7.0_21
 Class-Path: slf4j-log4j12-1.6.2.jar slf4j-ext-1.6.2.jar slf4j-api-1.6.
  2.jar log4j-1.2.16.jar netty-3.6.6.Final.jar spring-context-3.0.6.REL
  EASE.jar spring-expression-3.0.6.RELEASE.jar spring-tx-3.0.6.RELEASE.
@@ -10,7 +10,7 @@ Class-Path: slf4j-log4j12-1.6.2.jar slf4j-ext-1.6.2.jar slf4j-api-1.6.
  .jar spring-jms-3.0.6.RELEASE.jar spring-web-3.0.6.RELEASE.jar spring
  -webmvc-3.0.6.RELEASE.jar commons-logging-1.1.jar spring-amqp-1.2.0.R
  ELEASE.jar spring-rabbit-1.2.0.RELEASE.jar spring-erlang-1.2.0.RELEAS
- E.jar
+ E.jar jackson-core-asl-1.9.10.jar jackson-mapper-asl-1.9.10.jar
 Main-Class: com.pplive.media.capture.parser.App
 Created-By: Maven Integration for Eclipse
 
