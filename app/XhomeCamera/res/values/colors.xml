@@ -3,5 +3,6 @@
     <color name="scan_text_color">#f9fbfd</color>
     <color name="bg_color">#FEFEFE</color>
     <color name="text_color">#909090</color>
+    <color name="gray">#736E5A</color>
     
 </resources>

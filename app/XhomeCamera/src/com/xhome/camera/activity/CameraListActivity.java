@@ -76,7 +76,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.activity_camera_list);
+        setContentView(R.layout.camera_list);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.camera_list_title);
         init();
         imageLoader.init(ImageLoaderConfiguration.createDefault(this));
@@ -261,7 +261,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
             ViewHolder holder;
 
             if(null == convertView) {
-                view = getLayoutInflater().inflate(R.layout.item_list_image, null);
+                view = getLayoutInflater().inflate(R.layout.camera_list_item, null);
                 holder = new ViewHolder();
                 holder.text = (TextView)view.findViewById(R.id.text);
                 holder.image = (ImageView)view.findViewById(R.id.image);

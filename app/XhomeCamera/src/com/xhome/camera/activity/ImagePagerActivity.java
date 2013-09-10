@@ -23,7 +23,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.xhome.camera.R;
-import com.xhome.camera.utils.Constants.Extra;
+import com.xhome.camera.model.Constants.Extra;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
