@@ -43,24 +43,25 @@ void* MessageHandler(void*arg){
     }
     server_addr.sin_port = htons(SERVER_REQUEST_PORT);
     socklen_t server_addr_length = sizeof(server_addr);
-    unsigned int try_connect = 0;
+    int try_connect = 1;
     //向服务器发起连接,连接成功后client_socket代表了客户机和服务器的一个socket连接
-    while ( try_connect < 10000 ){
+    while(1){
+        if (try_connect){
         if(connect(client_socket,(struct sockaddr*)&server_addr, server_addr_length) < 0)
         {
             printf("Can Not Connect To %s!\n",SERVER);
-            try_connect++;
             sleep(30);
             continue;
         }
-        break;
-    }
-    if ( 10000 == try_connect ){
-        printf("Can Not Connect to %s failed after tryied %d times!!\n",SERVER,try_connect);
-        exit(1);
+            try_connect=0;
+        }else{
+           if ( pollMsg()){
+               printf( "exit the message thread!!!");
+               break;
+           }
+        }
     }
 
-    pollMsg(client_socket);
 
     //关闭socket
     close(client_socket);
@@ -81,31 +82,27 @@ void* MessageHandler(void*arg){
    */
 
 MsgHeader * getMsg(){
-    MsgHeader* header=malloc(sizeof(MsgHeader));
-    if (NULL==header){
+    MsgHeader header;
+    int length = recv(client_socket,&header,sizeof(MsgHeader),0);
+    if ( length != sizeof(MsgHeader) ){
+        printf ("cannot receive the right message from server, restart the process ");
+        return NULL;
+    }
+    char*msg = (char*)malloc(sizeof(MsgHeader)+header.size);
+    if (NULL==msg){
         printf ("failed to allocate the memory for MsgHeader");
         return NULL;
     }
-    int length = recv(client_socket,header,sizeof(MsgHeader),0);
-    if ( length != sizeof(MsgHeader) ){
-        printf ("cannot receive the right message from server, restart the process ");
-        exit(1);
-    }
-    if (header->size!=0){
-        header->data=(char*)malloc(header->size);
-        if (NULL==header->data){
-            printf ("failed to allocate the memory for MsgHeader data");
-            free (header);
-            return NULL;
-        }
-        length = recv(client_socket,header->data,header->size,0);
-        if ( length != header->size ){
+    memcpy(msg,&header,sizeof(MsgHeader));
+    if (header.size!=0){
+        length = recv(client_socket,((MsgHeader*)msg)->data,header.size,0);
+        if ( length != header.size ){
             printf ("cannot receive the right message data from server, restart the process ");
-            exit(1);
+            return  NULL;
         }
     }
-    printf("received msg %d with data size %d",header->ID,header->size);
-    return header;
+    printf("received msg %d with data size %d",header.ID,header.size);
+    return (MsgHeader*)msg;
 }
 int sendMsg(MsgHeader*header,unsigned size,char*data){
     header->size=size;
@@ -121,28 +118,42 @@ int sendMsg(MsgHeader*header,unsigned size,char*data){
     }
     return 0;
 }
-void pollMsg(){
-    unsigned int version = MSG_VERSION; 
-    MsgHeader *msg=NULL;
-    while (NULL!=(msg=getMsg())){
+int pollMsg(){
+    char* camera_id = "C111111";
+    unsigned int version;
+    Data_Server_Info * info;
+    Data_Rotate* rot;
+    MsgHeader request;
+    MsgHeader *msg=getMsg();
+    if (NULL!=msg){
         switch (msg->ID){
             case HANDSHAKE:
+                version = MSG_VERSION; 
                 sendMsg(msg,sizeof(unsigned int),(char*)&version);
                 MYFREEMSG(msg);
-                MsgHeader request;
                 request.ID=GET_DATA_SERVER_INFO;
                 request.size=0;
                 sendMsg(&request,0,0);
                 break;
             case GET_DATA_SERVER_INFO:
+                info = (Data_Server_Info*)(msg->data);
+                printf("server tell me the data server ip is %s port is %d",info->ip,info->port);
+                MYFREEMSG(msg);
                 break;
 
             case GET_CAMERA_INFO:
+                sendMsg(msg,strlen(camera_id)+1,camera_id);
+                MYFREEMSG(msg);
                 break;
+
             case ROTATE_CAMERA:
+                rot = (Data_Rotate*)(msg->data);
+                printf("server tell me to turn %d (1:left;2:right;4:top;8:down) %d degree",rot->direction,rot->degree);
+                MYFREEMSG(msg);
                 break;
             default:
                 break;
         }
     }
+    return 0;
 }
