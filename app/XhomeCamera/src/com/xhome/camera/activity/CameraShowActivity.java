@@ -42,7 +42,10 @@ public class CameraShowActivity extends Activity {
         setContentView(R.layout.camera_show);
 
         videoView = (VideoView)findViewById(R.id.rtsp_player);
-        PlayRtspStream("rtsp://218.204.223.237:554/live/1/66251FC11353191F/e7ooqwcfbqjoo80j.sdp");
+        //PlayRtspStream("rtsp://218.204.223.237:554/live/1/66251FC11353191F/e7ooqwcfbqjoo80j.sdp");
+        Intent intent = getIntent();
+        String cid = intent.getStringExtra("cid");
+        PlayRtspStream(this.getString(R.string.mtue_stream, cid));
         imageUrls = Constants.IMAGES;
 
         options = new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.ic_stub)

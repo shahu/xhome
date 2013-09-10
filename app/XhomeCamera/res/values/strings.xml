@@ -21,5 +21,6 @@
     <string name="date">9月9日</string>
     <string name="descr_image">Image</string>
     <string name="camera_move_txt">点我改变方向</string>
+    <string name="mtue_stream">http://42.159.6.169/live/5/60/%s.m3u8</string>
 
 </resources>
