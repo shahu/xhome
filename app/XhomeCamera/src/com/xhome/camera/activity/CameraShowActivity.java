@@ -1,10 +1,5 @@
-package com.xhome.camera.activity;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+package com.xhome.camera.activity;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -21,7 +16,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,8 +27,16 @@ import android.widget.EditText;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 public class CameraShowActivity extends Activity {
 
@@ -46,13 +48,9 @@ public class CameraShowActivity extends Activity {
 
     EditText rtspUrl;
 
-    String[] imageUrls;
-
     DisplayImageOptions options;
 
     private SeekBar mSeekBar;
-
-    private Handler mHandler;
 
     private ProgressDialog mProgressDialog;
 
@@ -60,46 +58,65 @@ public class CameraShowActivity extends Activity {
 
     private String cid;
 
+    private TextView mTextView;
+
+    private long progress;
+
+    private final int[] calendar = new int[3];
+
+    private final List<String> images = new ArrayList<String>();
+
+    private final int step = 30 * 60;
+
+    private Gallery gallery;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_show);
 
-        initView();
-        // PlayRtspStream("rtsp://218.204.223.237:554/live/1/66251FC11353191F/e7ooqwcfbqjoo80j.sdp");
         Intent intent = getIntent();
         cid = intent.getStringExtra("cid");
+        initData();
+        initView();
+        // PlayRtspStream("rtsp://218.204.223.237:554/live/1/66251FC11353191F/e7ooqwcfbqjoo80j.sdp");
         PlayRtspStream(StringUtils.generateStreamUrl(cid));
-        imageUrls = Constants.IMAGES;
 
         options = new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.ic_stub)
         .showImageForEmptyUri(R.drawable.ic_empty).showImageOnFail(R.drawable.ic_error)
         .cacheInMemory(true).cacheOnDisc(true).bitmapConfig(Bitmap.Config.RGB_565).build();
 
-        Gallery gallery = (Gallery) findViewById(R.id.gallery);
-        gallery.setAdapter(new ImageGalleryAdapter());
-        gallery.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startImagePagerActivity(position);
-            }
-        });
     }
 
-    private long getTodayTimestamp() {
-        Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
-        GregorianCalendar date = new GregorianCalendar(year, month, day, 0, 0, 0);
+    private long getZeroHourTimestamp() {
+
+        GregorianCalendar date = new GregorianCalendar(calendar[0], calendar[1], calendar[2], 0, 0,
+                0);
         return date.getTimeInMillis() / 1000;
     }
 
+    private void getCurrentProgress() {
+
+    }
+
     private void initView() {
-        videoView = (VideoView) findViewById(R.id.video_play);
-        mSeekBar = (SeekBar) findViewById(R.id.play_progress);
+        videoView = (VideoView)findViewById(R.id.video_play);
+        mSeekBar = (SeekBar)findViewById(R.id.play_progress);
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
+        mSeekBar.setProgress((int)progress);
+        mTextView = (TextView)findViewById(R.id.date_txt);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日");
+        mTextView.setText(formatter.format(new Date()));
+        gallery = (Gallery)findViewById(R.id.gallery);
+        gallery.setAdapter(new ImageGalleryAdapter(images));
+        gallery.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // startImagePagerActivity(position);
+            }
+        });
 
         mSeekBar.setMax(Constants.ONE_DAY);
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -108,7 +125,7 @@ public class CameraShowActivity extends Activity {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 // TODO 请求最新的定点播放URL
                 currentProgress = seekBar.getProgress();
-                long time = getTodayTimestamp() + currentProgress;
+                long time = getZeroHourTimestamp() + currentProgress;
                 Log.d(TAG, "seek stop currentProgress:" + currentProgress);
 
                 if((System.currentTimeMillis() / 1000 - time) > Constants.DEFAULT_PLAY_DELAY) {
@@ -130,18 +147,48 @@ public class CameraShowActivity extends Activity {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                int index = progress / 30 * 60 + 1;
 
+                if(index < images.size()) {
+                    gallery.setSelection(progress / 30 * 60 + 1);
+                }
             }
         });
-        mHandler = new Handler();
-        mHandler.postDelayed(mRunnable, 1000);
+    }
+
+    private void initData() {
+        Calendar c = Calendar.getInstance();
+        calendar[0] = c.get(Calendar.YEAR);
+        calendar[1] = c.get(Calendar.MONTH);
+        calendar[2] = c.get(Calendar.DAY_OF_MONTH);
+        progress = getZeroHourTimestamp();
+        getImages();
+    }
+
+    private void getImages() {
+        long position = getZeroHourTimestamp();
+        long now = System.currentTimeMillis() / 1000;
+        images.clear();
+
+        while(position <= now) {
+            images.add(StringUtils.generateScreenUrl(cid, position));
+            position += step;
+        }
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see android.app.Activity#onResume()
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     class CameraHttpResponse extends AsyncHttpResponseHandler {
 
         /*
          * (non-Javadoc)
-         *
          * @see com.xhome.camera.http.AsyncHttpResponseHandler#onStart()
          */
         @Override
@@ -154,7 +201,6 @@ public class CameraShowActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         *
          * @see
          * com.xhome.camera.http.AsyncHttpResponseHandler#onSuccess(java.lang
          * .String)
@@ -170,7 +216,6 @@ public class CameraShowActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         *
          * @see
          * com.xhome.camera.http.AsyncHttpResponseHandler#onFailure(java.lang
          * .Throwable, java.lang.String)
@@ -185,7 +230,6 @@ public class CameraShowActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         *
          * @see
          * com.xhome.camera.http.AsyncHttpResponseHandler#onFailure(java.lang
          * .Throwable)
@@ -201,13 +245,6 @@ public class CameraShowActivity extends Activity {
 
     private int currentProgress = 0;
 
-    Runnable mRunnable = new Runnable() {
-        @Override
-        public void run() {
-            mSeekBar.setProgress(currentProgress++);
-        }
-    };
-
     private void PlayRtspStream(String rtspUrl) {
         videoView.setVideoURI(Uri.parse(rtspUrl));
         videoView.requestFocus();
@@ -222,28 +259,32 @@ public class CameraShowActivity extends Activity {
 
     /*
      * (non-Javadoc)
-     *
      * @see android.app.Activity#onDestroy()
      */
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mHandler.removeCallbacks(mRunnable);
         videoView.stopPlayback();
         videoView = null;
     }
 
     private void startImagePagerActivity(int position) {
         Intent intent = new Intent(this, ImagePagerActivity.class);
-        intent.putExtra(Extra.IMAGES, imageUrls);
+        // intent.putExtra(Extra.IMAGES, images);
         intent.putExtra(Extra.IMAGE_POSITION, position);
         startActivity(intent);
     }
 
     private class ImageGalleryAdapter extends BaseAdapter {
+        private final List<String> items;
+
+        public ImageGalleryAdapter(List<String> items) {
+            this.items = items;
+        }
+
         @Override
         public int getCount() {
-            return imageUrls.length;
+            return items.size();
         }
 
         @Override
@@ -258,14 +299,14 @@ public class CameraShowActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView = (ImageView) convertView;
+            ImageView imageView = (ImageView)convertView;
 
             if(imageView == null) {
-                imageView = (ImageView) getLayoutInflater().inflate(R.layout.item_gallery_image,
+                imageView = (ImageView)getLayoutInflater().inflate(R.layout.item_gallery_image,
                             parent, false);
             }
 
-            String url = imageUrls[position];
+            String url = items.get(position);
             imageLoader.displayImage(url, imageView, options);
             return imageView;
         }

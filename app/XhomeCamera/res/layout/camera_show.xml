@@ -41,33 +41,33 @@
 
     <VideoView
         android:id="@+id/video_play"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/camera_name_layout" />
-
-    <SeekBar
-        android:id="@+id/play_progress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/video_play"
-        android:maxHeight="10dip"
-        android:minHeight="10dip" />
+        android:layout_height="200dip"
+        android:layout_below="@id/camera_name_layout" />
 
     <TextView
         android:id="@+id/date_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/play_progress"
+        android:layout_below="@id/video_play"
         android:text="@string/date"
         android:textSize="16sp" />
-
+    
     <Gallery
         android:id="@+id/gallery"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/date_txt"
-        android:layout_gravity="center_vertical"
+        android:layout_alignParentLeft="true"
         android:spacing="1dip" />
+    
+    <SeekBar
+        android:id="@+id/play_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gallery"
+        android:maxHeight="10dip"
+        android:minHeight="10dip" />
 
 </RelativeLayout>
