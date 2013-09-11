@@ -21,5 +21,19 @@ public class Constants {
 
     public static final int ONE_DAY = 24 * 60 * 60;
 
-    public static final String DOMAIN = "";
+    public static final String DOMAIN = "http://42.159.6.169";
+
+    public static final int DEFAULT_WITH = 320;
+
+    public static final int DEFAULT_HEIGHT = 240;
+
+    public static final String DEFAULT_STREAM_FORMAT = "m3u8";
+
+    public static final String DEFAULT_SCREEN_FORMAT = "jpeg";
+
+    public static final int DEFAULT_PLAY_DELAY = 60;
+
+    public static final String STREAM_URL = "%s/live/5/%d/%s.%s";
+
+    public static final String SCREEN_URL = "%s/image/%d/%d/%s/%d.%s";
 }

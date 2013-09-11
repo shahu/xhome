@@ -1,4 +1,3 @@
-
 package com.xhome.camera.activity;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -28,6 +27,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -37,6 +37,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -62,11 +63,11 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
     private EditText cidEditText;
 
-    CameraAdapter cameraAdapter;
+    private CameraAdapter cameraAdapter;
 
-    AlertDialog alertDialog;
+    private AlertDialog alertDialog;
 
-    AlertDialog.Builder builder;
+    private AlertDialog.Builder builder;
 
     private Handler handler;
 
@@ -88,8 +89,8 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
     private void init() {
         initRefreshListView();
-        btnAdd = (Button)findViewById(R.id.btn_add);
-        txtTitle = (TextView)findViewById(R.id.txt_title);
+        btnAdd = (Button) findViewById(R.id.btn_add);
+        txtTitle = (TextView) findViewById(R.id.txt_title);
         txtTitle.setText(R.string.camera_list);
         List<String> list = getCameraList();
         cameraAdapter = new CameraAdapter(list);
@@ -107,7 +108,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
     }
 
     private void initRefreshListView() {
-        refreshListView = (RefreshListView)findViewById(R.id.list_camera);
+        refreshListView = (RefreshListView) findViewById(R.id.list_camera);
         refreshListView.setCacheColorHint(Color.TRANSPARENT);
         refreshListView.setDivider(getResources().getDrawable(R.drawable.line));
         refreshListView.setPullLoadEnable(false);
@@ -117,7 +118,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Intent intent = new Intent(CameraListActivity.this, CameraShowActivity.class);
-                String cid = ((TextView)arg0.findViewById(R.id.text)).getText().toString();
+                String cid = ((TextView) arg0.findViewById(R.id.text)).getText().toString();
                 intent.putExtra("cid", cid);
                 startActivity(intent);
             }
@@ -127,8 +128,8 @@ public class CameraListActivity extends Activity implements IXListViewListener {
     private void initDialog() {
         LayoutInflater inflater = getLayoutInflater();
         final View layout = inflater.inflate(R.layout.add_camera,
-                                             (ViewGroup)findViewById(R.id.dialog));
-        cidEditText = (EditText)layout.findViewById(R.id.cidEditText);
+                                             (ViewGroup) findViewById(R.id.dialog));
+        cidEditText = (EditText) layout.findViewById(R.id.cidEditText);
         builder = new AlertDialog.Builder(this);
         builder.setTitle("请输入");
         builder.setIcon(android.R.drawable.ic_dialog_info);
@@ -136,7 +137,14 @@ public class CameraListActivity extends Activity implements IXListViewListener {
         builder.setPositiveButton("确定", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String item = cidEditText.getText() + Constants.SEPARATE + Constants.IMAGES[0];
+
+                // String item = cidEditText.getText() + Constants.SEPARATE +
+                // Constants.IMAGES[0];
+                String cid = cidEditText.getText().toString();
+                long timestamp = new Date().getTime() / 1000;
+                String screenUrl = StringUtils.generateScreenUrl(cid, timestamp);
+                Log.d(TAG, "screen_url:" + screenUrl);
+                String item = cid + Constants.SEPARATE + screenUrl;
 
                 try {
                     FileUtils
@@ -170,6 +178,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
     /*
      * (non-Javadoc)
+     *
      * @see android.app.Activity#onResume()
      */
     @Override
@@ -180,6 +189,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
     /*
      * (non-Javadoc)
+     *
      * @see android.app.Activity#onDestroy()
      */
     @Override
@@ -208,6 +218,21 @@ public class CameraListActivity extends Activity implements IXListViewListener {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.action_settings:
+                FileUtils.cleanLocalFiles(this);
+                reloadCameraList();
+                break;
+
+            default:
+                break;
+        }
+
+        return false;
+    }
+
     class CameraAdapter extends BaseAdapter {
         public List<String> items;
 
@@ -225,6 +250,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
         /*
          * (non-Javadoc)
+         *
          * @see android.widget.Adapter#getCount()
          */
         @Override
@@ -234,6 +260,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
         /*
          * (non-Javadoc)
+         *
          * @see android.widget.Adapter#getItem(int)
          */
         @Override
@@ -243,6 +270,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
         /*
          * (non-Javadoc)
+         *
          * @see android.widget.Adapter#getItemId(int)
          */
         @Override
@@ -252,6 +280,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
         /*
          * (non-Javadoc)
+         *
          * @see android.widget.Adapter#getView(int, android.view.View,
          * android.view.ViewGroup)
          */
@@ -263,12 +292,12 @@ public class CameraListActivity extends Activity implements IXListViewListener {
             if(null == convertView) {
                 view = getLayoutInflater().inflate(R.layout.camera_list_item, null);
                 holder = new ViewHolder();
-                holder.text = (TextView)view.findViewById(R.id.text);
-                holder.image = (ImageView)view.findViewById(R.id.image);
+                holder.text = (TextView) view.findViewById(R.id.text);
+                holder.image = (ImageView) view.findViewById(R.id.image);
                 view.setTag(holder);
 
             } else {
-                holder = (ViewHolder)view.getTag();
+                holder = (ViewHolder) view.getTag();
             }
 
             holder.text.setText(StringUtils.getCameraName(items.get(position)));
@@ -287,7 +316,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
         @Override
         public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
             if(loadedImage != null) {
-                ImageView imageView = (ImageView)view;
+                ImageView imageView = (ImageView) view;
                 boolean firstDisplay = !displayedImages.contains(imageUri);
 
                 if(firstDisplay) {
@@ -305,8 +334,37 @@ public class CameraListActivity extends Activity implements IXListViewListener {
                                        mSimpleDateFormat.format(new Date())));
     }
 
+    private void reloadCameraList() {
+        List<String> items = getCameraList();
+
+        if(0 == items.size()) {
+            return;
+        }
+
+        FileUtils.cleanLocalFiles(this);
+        List<String> newItems = new ArrayList<String>();
+
+        for(String item : items) {
+            String cid = item.split(Constants.SEPARATE)[0];
+            String screen = StringUtils.generateScreenUrl(cid, System.currentTimeMillis() / 1000);
+            String newItem = cid + Constants.SEPARATE + screen;
+            newItems.add(newItem);
+
+            try {
+                FileUtils.saveContentToLocal(CameraListActivity.this, Constants.FILE_NAME, newItem);
+
+            } catch(IOException e) {
+                Log.e(TAG, "" + e);
+            }
+        }
+
+        cameraAdapter.items = newItems;
+        cameraAdapter.notifyDataSetChanged();
+    }
+
     /*
      * (non-Javadoc)
+     *
      * @see com.xhome.camera.view.XListView.IXListViewListener#onRefresh()
      */
     @Override
@@ -315,7 +373,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
             @Override
             public void run() {
-                cameraAdapter.notifyDataSetChanged();
+                reloadCameraList();
                 onLoad();
             }
         }, 2000);
@@ -323,6 +381,7 @@ public class CameraListActivity extends Activity implements IXListViewListener {
 
     /*
      * (non-Javadoc)
+     *
      * @see com.xhome.camera.view.XListView.IXListViewListener#onLoadMore()
      */
     @Override

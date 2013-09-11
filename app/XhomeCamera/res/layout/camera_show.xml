@@ -3,15 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.CameraShowActivity" >
-
-    <ProgressBar
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" 
-        android:id="@+id/app_loading_pbar"/>
-
-    <RelativeLayout
+    <RelativeLayout
         android:id="@+id/camera_name_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >

@@ -1,4 +1,3 @@
-
 package com.xhome.camera.utils;
 
 import android.content.Context;
@@ -56,8 +55,10 @@ public class FileUtils {
     /**
      * Write the specified data to an specified file.
      *
-     * @param file The file to write into.
-     * @param data The data to write. May be null.
+     * @param file
+     *            The file to write into.
+     * @param data
+     *            The data to write. May be null.
      * @throws IOException
      */
     public static final void writeDataToFile(Context context, final File file, byte[] data)
@@ -261,5 +262,17 @@ public class FileUtils {
 
         File file = new File(fileName);
         return isFile(file);
+    }
+
+    private static void deleteFilesByDirectory(File directory) {
+        if(null != directory && directory.exists() && directory.isDirectory()) {
+            for(File item : directory.listFiles()) {
+                item.delete();
+            }
+        }
+    }
+
+    public static void cleanLocalFiles(Context context) {
+        deleteFilesByDirectory(context.getFilesDir());
     }
 }

@@ -1,5 +1,10 @@
-
 package com.xhome.camera.activity;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -8,6 +13,7 @@ import com.xhome.camera.http.AsyncHttpClient;
 import com.xhome.camera.http.AsyncHttpResponseHandler;
 import com.xhome.camera.model.Constants;
 import com.xhome.camera.model.Constants.Extra;
+import com.xhome.camera.utils.StringUtils;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -52,6 +58,8 @@ public class CameraShowActivity extends Activity {
 
     protected ImageLoader imageLoader = ImageLoader.getInstance();
 
+    private String cid;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,15 +68,15 @@ public class CameraShowActivity extends Activity {
         initView();
         // PlayRtspStream("rtsp://218.204.223.237:554/live/1/66251FC11353191F/e7ooqwcfbqjoo80j.sdp");
         Intent intent = getIntent();
-        String cid = intent.getStringExtra("cid");
-        PlayRtspStream(this.getString(R.string.mtue_stream, cid));
+        cid = intent.getStringExtra("cid");
+        PlayRtspStream(StringUtils.generateStreamUrl(cid));
         imageUrls = Constants.IMAGES;
 
         options = new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.ic_stub)
         .showImageForEmptyUri(R.drawable.ic_empty).showImageOnFail(R.drawable.ic_error)
         .cacheInMemory(true).cacheOnDisc(true).bitmapConfig(Bitmap.Config.RGB_565).build();
 
-        Gallery gallery = (Gallery)findViewById(R.id.gallery);
+        Gallery gallery = (Gallery) findViewById(R.id.gallery);
         gallery.setAdapter(new ImageGalleryAdapter());
         gallery.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -78,9 +86,18 @@ public class CameraShowActivity extends Activity {
         });
     }
 
+    private long getTodayTimestamp() {
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        GregorianCalendar date = new GregorianCalendar(year, month, day, 0, 0, 0);
+        return date.getTimeInMillis() / 1000;
+    }
+
     private void initView() {
-        videoView = (VideoView)findViewById(R.id.video_play);
-        mSeekBar = (SeekBar)findViewById(R.id.play_progress);
+        videoView = (VideoView) findViewById(R.id.video_play);
+        mSeekBar = (SeekBar) findViewById(R.id.play_progress);
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
@@ -89,11 +106,20 @@ public class CameraShowActivity extends Activity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                //TODO 请求最新的定点播放URL
+                // TODO 请求最新的定点播放URL
                 currentProgress = seekBar.getProgress();
+                long time = getTodayTimestamp() + currentProgress;
                 Log.d(TAG, "seek stop currentProgress:" + currentProgress);
-                AsyncHttpClient client = new AsyncHttpClient();
-                client.get(Constants.DOMAIN, new CameraHttpResponse());
+
+                if((System.currentTimeMillis() / 1000 - time) > Constants.DEFAULT_PLAY_DELAY) {
+                    AsyncHttpClient client = new AsyncHttpClient();
+                    String streamUrl = StringUtils.generateStreamUrl(cid,
+                                       System.currentTimeMillis() / 1000 - time);
+                    Log.d(TAG, "streamUrl:" + streamUrl);
+                    switchPlayStream(streamUrl);
+                    client.get(streamUrl, new CameraHttpResponse());
+                }
+
                 Toast.makeText(CameraShowActivity.this, "seek stop", Toast.LENGTH_LONG).show();
             }
 
@@ -113,41 +139,56 @@ public class CameraShowActivity extends Activity {
 
     class CameraHttpResponse extends AsyncHttpResponseHandler {
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
+         *
          * @see com.xhome.camera.http.AsyncHttpResponseHandler#onStart()
          */
         @Override
         public void onStart() {
-            //loadLinearLayout.setVisibility(View.VISIBLE);
-            //loadProgressBar.setVisibility(View.VISIBLE);
-            //loadTextView.setVisibility(View.VISIBLE);
+            // loadLinearLayout.setVisibility(View.VISIBLE);
+            // loadProgressBar.setVisibility(View.VISIBLE);
+            // loadTextView.setVisibility(View.VISIBLE);
             mProgressDialog.show();
         }
 
-        /* (non-Javadoc)
-         * @see com.xhome.camera.http.AsyncHttpResponseHandler#onSuccess(java.lang.String)
+        /*
+         * (non-Javadoc)
+         *
+         * @see
+         * com.xhome.camera.http.AsyncHttpResponseHandler#onSuccess(java.lang
+         * .String)
          */
         @Override
         public void onSuccess(String content) {
-            //TODO
-            //loadLinearLayout.setVisibility(View.GONE);
-            //loadProgressBar.setVisibility(View.GONE);
+            // TODO
+            // loadLinearLayout.setVisibility(View.GONE);
+            // loadProgressBar.setVisibility(View.GONE);
+            Log.d(TAG, "content:" + content);
             mProgressDialog.dismiss();
         }
 
-        /* (non-Javadoc)
-         * @see com.xhome.camera.http.AsyncHttpResponseHandler#onFailure(java.lang.Throwable, java.lang.String)
+        /*
+         * (non-Javadoc)
+         *
+         * @see
+         * com.xhome.camera.http.AsyncHttpResponseHandler#onFailure(java.lang
+         * .Throwable, java.lang.String)
          */
         @Override
         public void onFailure(Throwable error, String content) {
-            //loadProgressBar.setVisibility(View.INVISIBLE);
-            //loadTextView.setText(R.string.app_load_fail);
+            // loadProgressBar.setVisibility(View.INVISIBLE);
+            // loadTextView.setText(R.string.app_load_fail);
             mProgressDialog.dismiss();
             Toast.makeText(CameraShowActivity.this, "load fail", Toast.LENGTH_LONG).show();
         }
 
-        /* (non-Javadoc)
-         * @see com.xhome.camera.http.AsyncHttpResponseHandler#onFailure(java.lang.Throwable)
+        /*
+         * (non-Javadoc)
+         *
+         * @see
+         * com.xhome.camera.http.AsyncHttpResponseHandler#onFailure(java.lang
+         * .Throwable)
          */
         @Override
         public void onFailure(Throwable error) {
@@ -156,10 +197,7 @@ public class CameraShowActivity extends Activity {
             Toast.makeText(CameraShowActivity.this, "load fail", Toast.LENGTH_LONG).show();
         }
 
-
     }
-
-
 
     private int currentProgress = 0;
 
@@ -184,6 +222,7 @@ public class CameraShowActivity extends Activity {
 
     /*
      * (non-Javadoc)
+     *
      * @see android.app.Activity#onDestroy()
      */
     @Override
@@ -219,10 +258,10 @@ public class CameraShowActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView = (ImageView)convertView;
+            ImageView imageView = (ImageView) convertView;
 
             if(imageView == null) {
-                imageView = (ImageView)getLayoutInflater().inflate(R.layout.item_gallery_image,
+                imageView = (ImageView) getLayoutInflater().inflate(R.layout.item_gallery_image,
                             parent, false);
             }
 
