@@ -1,4 +1,3 @@
-
 package com.xhome.camera.activity;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -10,6 +9,7 @@ import com.xhome.camera.model.Constants;
 import com.xhome.camera.model.Constants.Extra;
 import com.xhome.camera.utils.StringUtils;
 
+import android.R.integer;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -60,7 +60,7 @@ public class CameraShowActivity extends Activity {
 
     private TextView mTextView;
 
-    private long progress;
+    private long initProgress = 0;
 
     private final int[] calendar = new int[3];
 
@@ -69,6 +69,12 @@ public class CameraShowActivity extends Activity {
     private final int step = 30 * 60;
 
     private Gallery gallery;
+
+    private ImageGalleryAdapter imageGalleryAdapter;
+
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日");
+
+    private long todayTimeStamp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,29 +94,23 @@ public class CameraShowActivity extends Activity {
 
     }
 
-    private long getZeroHourTimestamp() {
-
-        GregorianCalendar date = new GregorianCalendar(calendar[0], calendar[1], calendar[2], 0, 0,
-                0);
-        return date.getTimeInMillis() / 1000;
-    }
-
     private void getCurrentProgress() {
 
     }
 
     private void initView() {
-        videoView = (VideoView)findViewById(R.id.video_play);
-        mSeekBar = (SeekBar)findViewById(R.id.play_progress);
+        videoView = (VideoView) findViewById(R.id.video_play);
+        mSeekBar = (SeekBar) findViewById(R.id.play_progress);
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-
-        mSeekBar.setProgress((int)progress);
-        mTextView = (TextView)findViewById(R.id.date_txt);
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日");
+        mSeekBar.setMax(Constants.ONE_DAY);
+        Log.d(TAG, "progress:" + initProgress + " maxProgress:" + mSeekBar.getMax());
+        mSeekBar.setProgress((int) initProgress);
+        mTextView = (TextView) findViewById(R.id.date_txt);
         mTextView.setText(formatter.format(new Date()));
-        gallery = (Gallery)findViewById(R.id.gallery);
-        gallery.setAdapter(new ImageGalleryAdapter(images));
+        gallery = (Gallery) findViewById(R.id.gallery);
+        imageGalleryAdapter = new ImageGalleryAdapter(images);
+        gallery.setAdapter(imageGalleryAdapter);
         gallery.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -118,14 +118,16 @@ public class CameraShowActivity extends Activity {
             }
         });
 
-        mSeekBar.setMax(Constants.ONE_DAY);
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 // TODO 请求最新的定点播放URL
                 currentProgress = seekBar.getProgress();
-                long time = getZeroHourTimestamp() + currentProgress;
+                // int imageIndx = currentProgress / step;
+                // gallery.setSelection(imageIndx);
+
+                long time = todayTimeStamp + currentProgress;
                 Log.d(TAG, "seek stop currentProgress:" + currentProgress);
 
                 if((System.currentTimeMillis() / 1000 - time) > Constants.DEFAULT_PLAY_DELAY) {
@@ -147,10 +149,12 @@ public class CameraShowActivity extends Activity {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                int index = progress / 30 * 60 + 1;
+                int index = progress / step + 1;
+
+                Log.d(TAG, "image index:" + index);
 
                 if(index < images.size()) {
-                    gallery.setSelection(progress / 30 * 60 + 1);
+                    gallery.setSelection(index);
                 }
             }
         });
@@ -161,12 +165,14 @@ public class CameraShowActivity extends Activity {
         calendar[0] = c.get(Calendar.YEAR);
         calendar[1] = c.get(Calendar.MONTH);
         calendar[2] = c.get(Calendar.DAY_OF_MONTH);
-        progress = getZeroHourTimestamp();
+        GregorianCalendar date = new GregorianCalendar(calendar[0], calendar[1], calendar[2], 0, 0,
+                0);
+        todayTimeStamp = date.getTimeInMillis() / 1000;
         getImages();
     }
 
     private void getImages() {
-        long position = getZeroHourTimestamp();
+        long position = todayTimeStamp;
         long now = System.currentTimeMillis() / 1000;
         images.clear();
 
@@ -174,10 +180,18 @@ public class CameraShowActivity extends Activity {
             images.add(StringUtils.generateScreenUrl(cid, position));
             position += step;
         }
+
+        initProgress = now - todayTimeStamp;
+
+        if(null != imageGalleryAdapter) {
+            imageGalleryAdapter.items = images;
+            imageGalleryAdapter.notifyDataSetChanged();
+        }
     }
 
     /*
      * (non-Javadoc)
+     *
      * @see android.app.Activity#onResume()
      */
     @Override
@@ -189,6 +203,7 @@ public class CameraShowActivity extends Activity {
 
         /*
          * (non-Javadoc)
+         *
          * @see com.xhome.camera.http.AsyncHttpResponseHandler#onStart()
          */
         @Override
@@ -201,6 +216,7 @@ public class CameraShowActivity extends Activity {
 
         /*
          * (non-Javadoc)
+         *
          * @see
          * com.xhome.camera.http.AsyncHttpResponseHandler#onSuccess(java.lang
          * .String)
@@ -216,6 +232,7 @@ public class CameraShowActivity extends Activity {
 
         /*
          * (non-Javadoc)
+         *
          * @see
          * com.xhome.camera.http.AsyncHttpResponseHandler#onFailure(java.lang
          * .Throwable, java.lang.String)
@@ -230,6 +247,7 @@ public class CameraShowActivity extends Activity {
 
         /*
          * (non-Javadoc)
+         *
          * @see
          * com.xhome.camera.http.AsyncHttpResponseHandler#onFailure(java.lang
          * .Throwable)
@@ -259,6 +277,7 @@ public class CameraShowActivity extends Activity {
 
     /*
      * (non-Javadoc)
+     *
      * @see android.app.Activity#onDestroy()
      */
     @Override
@@ -276,7 +295,7 @@ public class CameraShowActivity extends Activity {
     }
 
     private class ImageGalleryAdapter extends BaseAdapter {
-        private final List<String> items;
+        public List<String> items;
 
         public ImageGalleryAdapter(List<String> items) {
             this.items = items;
@@ -299,10 +318,10 @@ public class CameraShowActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView = (ImageView)convertView;
+            ImageView imageView = (ImageView) convertView;
 
             if(imageView == null) {
-                imageView = (ImageView)getLayoutInflater().inflate(R.layout.item_gallery_image,
+                imageView = (ImageView) getLayoutInflater().inflate(R.layout.item_gallery_image,
                             parent, false);
             }
 
