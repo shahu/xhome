@@ -1,11 +1,83 @@
 K 25
 svn:wc:ra_dav:version-url
-V 80
-/repositories/r01/!svn/ver/7161/p2p/trunk/project/server_mod/cutter/cutterworker
+V 76
+/repositories/r01/!svn/ver/7159/p2p/trunk/src/server_mod/cutter/cutterworker
 END
-Makefile.in
+StreamReader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repositories/r01/!svn/ver/7068/p2p/trunk/src/server_mod/cutter/cutterworker/StreamReader.cpp
+END
+stdafx.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repositories/r01/!svn/ver/5954/p2p/trunk/src/server_mod/cutter/cutterworker/stdafx.h
+END
+AsyncLilo.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r01/!svn/ver/3068/p2p/trunk/src/server_mod/cutter/cutterworker/AsyncLilo.h
+END
+PieceWriter.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/repositories/r01/!svn/ver/7161/p2p/trunk/project/server_mod/cutter/cutterworker/Makefile.in
+/repositories/r01/!svn/ver/7159/p2p/trunk/src/server_mod/cutter/cutterworker/PieceWriter.cpp
+END
+StreamReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r01/!svn/ver/7068/p2p/trunk/src/server_mod/cutter/cutterworker/StreamReader.h
+END
+FlvStuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r01/!svn/ver/4535/p2p/trunk/src/server_mod/cutter/cutterworker/FlvStuff.h
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repositories/r01/!svn/ver/7140/p2p/trunk/src/server_mod/cutter/cutterworker/main.cpp
+END
+PieceWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r01/!svn/ver/7068/p2p/trunk/src/server_mod/cutter/cutterworker/PieceWriter.h
+END
+targetver.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r01/!svn/ver/3050/p2p/trunk/src/server_mod/cutter/cutterworker/targetver.h
+END
+stdafx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r01/!svn/ver/3220/p2p/trunk/src/server_mod/cutter/cutterworker/stdafx.cpp
+END
+Piece.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repositories/r01/!svn/ver/3050/p2p/trunk/src/server_mod/cutter/cutterworker/Piece.h
+END
+lightlogger.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r01/!svn/ver/3068/p2p/trunk/src/server_mod/cutter/cutterworker/lightlogger.h
+END
+AsyncLilo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r01/!svn/ver/3068/p2p/trunk/src/server_mod/cutter/cutterworker/AsyncLilo.cpp
 END

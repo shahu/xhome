@@ -1,0 +1,1 @@
+link ../lightlogger.h
