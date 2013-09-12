@@ -1,0 +1,68 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/applestreamingclient/flex/html-template
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+history
+dir
+
+swfobject.js
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+34f352f573084aa648f2d2330b32ec4b
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+playerProductInstall.swf
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+be332eb9be4b3dcfdcd757bbc6e495e5
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+has-props
+
+index.template.html
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+9e87e20c078de4cc0cb6d199142b8911
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

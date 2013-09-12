@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repositories/r02/!svn/ver/97895/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc
+END
+mmapfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/mmapfile.h
+END
+dhgroups.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/dhgroups.h
+END
+misc.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repositories/r02/!svn/ver/59020/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/misc.h
+END
+timersmanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/timersmanager.h
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/file.h
+END
+uri.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/uri.h
+END
+crypto.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/crypto.h
+END
+linkedlist.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/linkedlist.h
+END
+variantmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/variantmap.h
+END
+streammonitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repositories/r02/!svn/ver/97895/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/streammonitor.h
+END
+variant.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/utils/misc/variant.h
+END

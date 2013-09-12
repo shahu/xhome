@@ -1,0 +1,106 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/applestreamingclient/src
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+applestreamingclientapplication.cpp
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+7dd16e1249744a6da1b5ffc93d7f01f2
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+speedcomputer.cpp
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+6b95740ff2a9c41d30e52b32b74cd94e
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+playlist.cpp
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+c1afa6bdcf08f6c86d7bef4be34075c2
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+protocols
+dir
+
+clientcontext.cpp
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+2727eefbacdbc279c5af7eb0b1416704
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+jnihelpers.cpp
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+28d07994f9876018d791c450361ea037
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+eventsink
+dir
+
+applestreamingclient.cpp
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+8d2a23b7d97b8827b7c984fb8b985ed2
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

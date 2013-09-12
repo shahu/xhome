@@ -1,0 +1,53 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/cmake/tests
+http://192.168.0.94/repositories/r02
+
+
+
+2013-09-04T10:42:51.229189Z
+97950
+tadycao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+tests
+file
+
+
+
+
+2013-09-04T09:49:59.000000Z
+77bbcb51f81c2f4fe0893e13d6052b31
+2013-09-04T10:42:51.229189Z
+97950
+tadycao
+has-props
+
+CMakeLists.txt
+file
+
+
+
+
+2013-08-26T05:49:34.000000Z
+e73b8dcb0e33e08056d719240cdf710f
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

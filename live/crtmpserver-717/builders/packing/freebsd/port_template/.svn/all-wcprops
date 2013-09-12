@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/freebsd/port_template
+END
+pkg-descr
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/freebsd/port_template/pkg-descr
+END
+rc.d.crtmpserver
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/freebsd/port_template/rc.d.crtmpserver
+END
+fixConfFile.sh
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/freebsd/port_template/fixConfFile.sh
+END
+freebsd_CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/freebsd/port_template/freebsd_CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/freebsd/port_template/Makefile
+END
+conf.pkg-plist
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/freebsd/port_template/conf.pkg-plist
+END

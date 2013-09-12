@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/applestreamingclient/include/protocols/aes
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+aesappprotocolhandler.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+c3f7e5e5db78349aca4ce73f7fed26b7
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+inboundaesprotocol.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+cfcaa2200e62978d32cdaec7e5a099f0
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

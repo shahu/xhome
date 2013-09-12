@@ -1,0 +1,130 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/cmake
+http://192.168.0.94/repositories/r02
+
+
+
+2013-09-04T10:42:51.229189Z
+97950
+tadycao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+lua
+dir
+
+vm
+dir
+
+vg.sh
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+60d838267ffe28c9cc9dc9ca9fc584d1
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+applications
+dir
+
+tinyvlc
+dir
+
+common
+dir
+
+ltib
+dir
+
+debianpackage.patch
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+ac1882e199a6fcacd58253c326f9a4a4
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+trafficdissector
+dir
+
+cleanup.sh
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+740431a768de8a67650f171af80c8f99
+2012-07-19T06:06:35.499155Z
+59020
+balenocui
+
+tests
+dir
+
+tinyxml
+dir
+
+run
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+5c27942f207f92d4e6f4d3290157b5f6
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+vmtests
+dir
+
+thelib
+dir
+
+cmake_find_modules
+dir
+
+androidapplestreaming
+dir
+
+crtmpserver
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+7a3e048d300d545f04ac0defb7e2fb73
+2012-07-19T07:59:14.538627Z
+59046
+balenocui
+

@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/VS2010/samplefactory
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+samplefactory.vcxproj
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+fd4437c0c8e19d27589f5b2bc8c52c0e
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+samplefactory.vcxproj.filters
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+a96d3ab251ce54afaaf415a1b0d48b4d
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

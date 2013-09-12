@@ -1,0 +1,73 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/admin/flex
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+.project
+file
+
+
+
+
+2013-09-05T02:27:21.000000Z
+cb4d1e4171652b97bd189c02c3102b9f
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+src
+dir
+
+libs
+dir
+
+.flexProperties
+file
+
+
+
+
+2013-09-05T02:27:21.000000Z
+ccb5c9264f445136eb01470fde9397f1
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+.actionScriptProperties
+file
+
+
+
+
+2013-09-05T02:27:21.000000Z
+4f95e2ea77905869a83c1a7da9568769
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+.settings
+dir
+

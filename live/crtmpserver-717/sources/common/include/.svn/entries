@@ -1,0 +1,58 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/common/include
+http://192.168.0.94/repositories/r02
+
+
+
+2013-09-04T07:23:11.770778Z
+97895
+haroldmiao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+utils
+dir
+
+defines.h
+file
+
+
+
+
+2013-09-05T02:27:25.000000Z
+5b60648876f068c5604dc59d30151c95
+2012-07-19T06:06:35.499155Z
+59020
+balenocui
+
+platform
+dir
+
+common.h
+file
+
+
+
+
+2013-09-05T02:27:25.000000Z
+e176906c24b2eb9de193004cda78084b
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

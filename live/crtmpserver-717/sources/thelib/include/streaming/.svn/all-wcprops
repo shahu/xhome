@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repositories/r02/!svn/ver/58541/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming
+END
+codectypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/codectypes.h
+END
+streamstypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/streamstypes.h
+END
+innetrawstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/innetrawstream.h
+END
+outnetrawstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/outnetrawstream.h
+END
+streamcapabilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/streamcapabilities.h
+END
+streamsmanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/streamsmanager.h
+END
+packetqueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/packetqueue.h
+END
+baseinstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repositories/r02/!svn/ver/58541/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/baseinstream.h
+END
+baseinfilestream.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/baseinfilestream.h
+END
+baseoutstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/baseoutstream.h
+END
+baseoutfilestream.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/baseoutfilestream.h
+END
+nalutypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/nalutypes.h
+END
+baseinnetstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/baseinnetstream.h
+END
+baseoutnetstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/baseoutnetstream.h
+END
+basestream.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/streaming/basestream.h
+END

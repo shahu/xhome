@@ -1,0 +1,86 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/misc_flash_resources/videochat
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+.project
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+9c13685fceb8b6ed65bfbf2bc8094be9
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+src
+dir
+
+libs
+dir
+
+.flexProperties
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+88ed38c6209027bcc7631a7a5e47c3cc
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+collimator.gif
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+be336aa0ba3d30196d736d1ed8b26e20
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+has-props
+
+.actionScriptProperties
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+9bcae92d0c8e3b59617bc70cedb0a3f6
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+.settings
+dir
+

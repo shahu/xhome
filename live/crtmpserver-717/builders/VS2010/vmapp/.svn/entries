@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/VS2010/vmapp
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+vmapp.vcxproj.filters
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+9477eedd73576b9615fb8f68209ee7c5
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+vmapp.vcxproj
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+d20629d564e2b1d3a24e0acb65ae78c8
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

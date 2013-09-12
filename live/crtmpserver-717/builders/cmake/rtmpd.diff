@@ -1,0 +1,17 @@
+Index: tests/tests
+===================================================================
+无法显示：文件标记为二进制类型。
+svn:mime-type = application/octet-stream
+Index: crtmpserver/crtmpserver.lua
+===================================================================
+--- crtmpserver/crtmpserver.lua	（修订版 97933）
++++ crtmpserver/crtmpserver.lua	（工作拷贝）
+@@ -4,7 +4,7 @@
+ {
+ 	-- if true, the server will run as a daemon.
+ 	-- NOTE: all console appenders will be ignored if this is a daemon
+-	daemon=true,
++	daemon=false,
+ 	-- the OS's path separator. Used in composing paths
+ 	pathSeparator="/",
+ 

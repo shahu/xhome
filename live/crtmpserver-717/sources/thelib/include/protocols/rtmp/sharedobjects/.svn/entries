@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/protocols/rtmp/sharedobjects
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+somanager.h
+file
+
+
+
+
+2013-09-05T02:27:23.000000Z
+779bcebe685a061451729c1f08d14a73
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+so.h
+file
+
+
+
+
+2013-09-05T02:27:23.000000Z
+3c6d9ae196da462fd3b6eb2ca57f4140
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

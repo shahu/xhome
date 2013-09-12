@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/protocols/dns
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+inbounddnsresolverprotocol.h
+file
+
+
+
+
+2013-09-05T02:27:23.000000Z
+5ef361b53382bd31b4d455b0dd84d9c8
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+outbounddnsresolverprotocol.h
+file
+
+
+
+
+2013-09-05T02:27:23.000000Z
+b2292a0c2437176a1b904ef5000fef15
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

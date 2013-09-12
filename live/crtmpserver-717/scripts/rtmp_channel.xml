@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<root>
+	<items>
+		<stream id="1" title="多码流_浙江卫视_712K" guid="5f36a7d4e7db49b7854b2765b7e8b3e2" url="http://221.235.191.164:18081/zjws2"/>
+	</items>
+	<items>
+		<stream id="2" title="多码流_浙江卫视_412K" guid="ecc14bb80dc347769932f57a9c0b3870" url="http://221.235.191.164:18081/zjws2"/>
+	</items>
+	<items>
+		<stream id="3" title="上海艺术人文" guid="bf468b65547641e8a79fa230dcfb616c" url="http://124.74.245.90:19924/flv800"/>
+	</items>
+	<items>
+		<stream id="4" title="3*24江西卫视" guid="6bc9ff9cb7c64947927279da55c91216" url="http://59.175.215.242:8202/flv100"/>
+	</items>
+	<items>
+		<stream id="5" title="3*24湖南卫视" guid="d3b4817a24164e40a8ea028134619025" url="http://59.175.215.242:8202/flv500"/>
+	</items>
+	<items>
+		<stream id="6" title="cctv06(仅枣庄使用)" guid="58fd7d8b63264df1bb2960cfd481c28d" url="http://59.175.215.98:8205/flv0"/>
+	</items>
+	<items>
+		<stream id="7" title="欧洲足球" guid="48b12e2fb4c34ed88fecc4d9a0f0d634" url="http://121.14.34.132:8088/flv800"/>
+	</items>
+	<items>
+		<stream id="8" title="三立台湾" guid="18912c8de6064574841854fea7337df9" url="http://124.74.245.90:22272/get_signal.php?preset=g2_std&amp;src=mms://192.168.47.164:16402"/>
+	</items>
+	<items>
+		<stream id="9" title="3*24第一财经" guid="b59a6cc811c14d5bb0e6cb445b742d75" url="http://124.74.245.90:19924/flv200"/>
+	</items>
+</root>

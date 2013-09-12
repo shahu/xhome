@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/configuration
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-19T06:06:35.499155Z
+59020
+balenocui
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+configfile.h
+file
+
+
+
+
+2013-09-05T02:27:23.000000Z
+f07a9615f6527d6bcbe3662e1f2e6cde
+2012-07-19T06:06:35.499155Z
+59020
+balenocui
+
+module.h
+file
+
+
+
+
+2013-09-05T02:27:23.000000Z
+3a1113719eda79fdff773363cacf16c0
+2012-07-13T09:37:36.120471Z
+58541
+balenocui
+

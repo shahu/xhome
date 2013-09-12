@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/misc_flash_resources/videochat/src
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+videochat.mxml
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+e2afeb1883228ceab52e37584d207e26
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+Engine.as
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+1f975b0f77e0dd35a4e6a199ec08530d
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

@@ -1,0 +1,40 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/applestreamingclient/flex/.settings
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+org.eclipse.core.resources.prefs
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+6c62600ac4f7df9e29f863bd9edd286b
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

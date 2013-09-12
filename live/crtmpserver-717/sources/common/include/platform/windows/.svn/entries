@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/common/include/platform/windows
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+max.h
+file
+
+
+
+
+2013-09-05T02:27:25.000000Z
+58ac55b4879deea935b0f37a9a6c325e
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+win32platform.h
+file
+
+
+
+
+2013-09-05T02:27:25.000000Z
+1a5d711b73d576e2011f7b34f585286a
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

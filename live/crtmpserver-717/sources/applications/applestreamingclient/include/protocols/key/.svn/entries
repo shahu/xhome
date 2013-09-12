@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/applestreamingclient/include/protocols/key
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+inboundkeyprotocol.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+12e567552cc1f82f871760bbe9a9c769
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+keyappprotocolhandler.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+2ef96bb3cc77a27dc7dea7a4c47e452a
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

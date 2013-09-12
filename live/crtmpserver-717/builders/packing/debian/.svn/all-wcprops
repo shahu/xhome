@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian
+END
+fix_paths.sed
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/fix_paths.sed
+END
+cleanup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/cleanup.sh
+END
+build_package.sh
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/build_package.sh
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/README.txt
+END

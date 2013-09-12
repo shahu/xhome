@@ -1,0 +1,148 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols
+http://192.168.0.94/repositories/r02
+
+
+
+2013-09-04T10:42:51.229189Z
+97950
+tadycao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+defaultprotocolfactory.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+e638eb1544841420850cfa1f2768c87c
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+http
+dir
+
+timer
+dir
+
+rtmp
+dir
+
+dns
+dir
+
+ts
+dir
+
+tcpprotocol.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+f90e46fbce545a326239a7402d39d1be
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+udpprotocol.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+c79064842ad3e80749e0c35832fb4366
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+mms
+dir
+
+ssl
+dir
+
+variant
+dir
+
+rtp
+dir
+
+rawhttpstream
+dir
+
+baseprotocolfactory.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+ac32629e3c312c3614ef2ec91f42c5e0
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+protocolfactorymanager.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+93662a9041f55f920d200723bff14f61
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+cli
+dir
+
+liveflv
+dir
+
+protocolmanager.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+494e7c772be1b2752013ddc70b2b7262
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+baseprotocol.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+c5204a28f2ab13c7f690ab3e7a2ac80e
+2013-09-04T07:23:11.770778Z
+97895
+haroldmiao
+

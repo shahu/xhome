@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repositories/r02/!svn/ver/97950/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp
+END
+rtmpprotocolserializer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/rtmpprotocolserializer.cpp
+END
+inboundrtmpsdiscriminatorprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/inboundrtmpsdiscriminatorprotocol.cpp
+END
+basertmpappprotocolhandler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repositories/r02/!svn/ver/58541/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/basertmpappprotocolhandler.cpp
+END
+basertmpprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repositories/r02/!svn/ver/59020/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/basertmpprotocol.cpp
+END
+header_be_ba.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/header_be_ba.cpp
+END
+channel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/channel.cpp
+END
+rtmpeprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/rtmpeprotocol.cpp
+END
+header_le_ba.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/header_le_ba.cpp
+END
+monitorrtmpprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/monitorrtmpprotocol.cpp
+END
+amf0serializer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/amf0serializer.cpp
+END
+amf3serializer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/amf3serializer.cpp
+END
+inboundrtmpprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/inboundrtmpprotocol.cpp
+END
+outboundrtmpprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/outboundrtmpprotocol.cpp
+END
+inboundhttp4rtmp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repositories/r02/!svn/ver/59020/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/inboundhttp4rtmp.cpp
+END
+header_le_sa.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/header_le_sa.cpp
+END

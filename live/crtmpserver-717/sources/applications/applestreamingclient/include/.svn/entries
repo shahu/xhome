@@ -1,0 +1,106 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/applestreamingclient/include
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+applestreamingclient.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+d63ded80a1f267991d83cff0ef342737
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+protocols
+dir
+
+applestreamingclientapplication.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+01eca2bb25bfcc57dba52b9edb7ab469
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+speedcomputer.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+7dd7e7d3b9eaab93841e201f9f34760a
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+eventsink
+dir
+
+playlist.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+182c637974d402021a345183b2e02bca
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+clientcontext.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+16b48680907ddfd01c685e8c79aa8c41
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+jnihelpers.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+0caf5ed5d866ba6851a205c1d041238c
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

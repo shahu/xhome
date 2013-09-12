@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/VS2010/proxypublish
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+proxypublish.vcxproj
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+cfa477b6b477635f3a429221ee3229af
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+proxypublish.vcxproj.filters
+file
+
+
+
+
+2013-08-26T05:49:35.000000Z
+424d36c18637af7c6a40c6e7621946c9
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

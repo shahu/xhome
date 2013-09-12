@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/mediaformats/nsv
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+mp3media.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+d874429ca186a3b2666badc02e3cdda2
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+nsvdocument.cpp
+file
+
+
+
+
+2013-09-05T02:27:24.000000Z
+37bf8385f126b10e1677a2a883476fa7
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

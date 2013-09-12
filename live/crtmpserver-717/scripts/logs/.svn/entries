@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/scripts/logs
+http://192.168.0.94/repositories/r02
+
+
+
+2013-01-17T02:38:20.175991Z
+76702
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+rtmplog2html.py
+file
+
+
+
+
+2013-08-26T05:49:33.000000Z
+5c994061716a147a6bf37a8ce66e3a95
+2013-01-17T02:38:20.175991Z
+76702
+jasonyang
+
+analyse_rtmp.sh
+file
+
+
+
+
+2013-08-26T05:49:33.000000Z
+25f360213a4ae3fac3d3361a0295e865
+2012-08-06T06:49:18.265527Z
+60514
+jasonyang
+

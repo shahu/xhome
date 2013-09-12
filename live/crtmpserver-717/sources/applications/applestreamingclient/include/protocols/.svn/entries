@@ -1,0 +1,79 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/applestreamingclient/include/protocols
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+protocolfactory.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+dfd029362d5dfb57e150eed967da718a
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+timer
+dir
+
+httpbuff
+dir
+
+rtmp
+dir
+
+variant
+dir
+
+genericprotocol.h
+file
+
+
+
+
+2013-09-05T02:27:22.000000Z
+d2500870207865033d7da149f9e7793c
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+rtp
+dir
+
+ts
+dir
+
+aes
+dir
+
+key
+dir
+
+m3u8
+dir
+

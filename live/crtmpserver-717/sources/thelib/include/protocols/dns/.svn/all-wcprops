@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/protocols/dns
+END
+inbounddnsresolverprotocol.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/protocols/dns/inbounddnsresolverprotocol.h
+END
+outbounddnsresolverprotocol.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/protocols/dns/outbounddnsresolverprotocol.h
+END

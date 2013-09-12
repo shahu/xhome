@@ -1,0 +1,55 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/packing/freebsd
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+port_template
+dir
+
+distinfo
+file
+
+
+
+
+2013-08-26T05:49:36.000000Z
+501c07f3ee3db33d319c607f92b3f8f6
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+create_package.sh
+file
+
+
+
+
+2013-08-26T05:49:36.000000Z
+c54e0a382439e970e3a74f7240d1ccff
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

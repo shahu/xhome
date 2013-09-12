@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/netbeans/osx/phpframework/phpframework/nbproject
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+project.properties
+file
+
+
+
+
+2013-08-26T05:49:34.000000Z
+71acae6448996c0b16f60b9f17421f1d
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+project.xml
+file
+
+
+
+
+2013-08-26T05:49:34.000000Z
+8dffe7fe38562eefd9abc543dc81cc73
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

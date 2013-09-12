@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/src/platform/windows
+END
+strncasecmp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/src/platform/windows/strncasecmp.cpp
+END
+timegm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/src/platform/windows/timegm.cpp
+END
+strptime.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/src/platform/windows/strptime.cpp
+END
+win32platform.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/common/src/platform/windows/win32platform.cpp
+END

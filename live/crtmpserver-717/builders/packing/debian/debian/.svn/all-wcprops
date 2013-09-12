@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian
+END
+crtmpserver.default
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.default
+END
+crtmpserver.postrm
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.postrm
+END
+crtmpserver.preinst
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.preinst
+END
+control
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/control
+END
+crtmpserver.prerm
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.prerm
+END
+crtmpserver.install
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.install
+END
+dirs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/dirs
+END
+crtmpserver.manpages
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.manpages
+END
+copyright
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/copyright
+END
+rules
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/rules
+END
+crtmpserver.1
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.1
+END
+crtmpserver.logrotate
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.logrotate
+END
+crtmpserver.postinst
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.postinst
+END
+crtmpserver.init
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian/debian/crtmpserver.init
+END

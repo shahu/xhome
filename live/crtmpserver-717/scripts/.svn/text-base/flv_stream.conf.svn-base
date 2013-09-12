@@ -1,0 +1,25 @@
+[crtmpserver]
+push_thread1=122.4.74.85:6666
+push_thread2=122.4.74.86:6666
+
+[pushlog]
+log_level=warning
+log_back_count=20
+log_max_size=10*1024*1024
+log_datefmt=%Y-%m-%d %H:%M:%S
+log_file=/home/logs/crtmpserver/push_streams.log
+
+[channelstream]
+channel_index=0,1,2,3,4,5,6,7
+#channel_index=8,9,a,b,c,d,e,f
+# Complete channel list from cms
+channel_xml=/usr/local/crtmpserver/rtmp_channel.xml
+# Partial channel list for localhost
+channel_ini=/usr/local/crtmpserver/rtmp_channel.ini
+
+[updatelog]
+log_level=warning
+log_back_count=20
+log_max_size=10*1024*1024
+log_datefmt=%Y-%m-%d %H:%M:%S
+log_file=/home/logs/crtmpserver/update_streams.log

@@ -1,0 +1,46 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include
+http://192.168.0.94/repositories/r02
+
+
+
+2012-08-17T06:21:57.804722Z
+61745
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+application
+dir
+
+protocols
+dir
+
+configuration
+dir
+
+streaming
+dir
+
+mediaformats
+dir
+
+netio
+dir
+

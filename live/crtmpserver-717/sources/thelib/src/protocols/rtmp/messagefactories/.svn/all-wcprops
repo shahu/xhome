@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/messagefactories
+END
+somessagefactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/messagefactories/somessagefactory.cpp
+END
+streammessagefactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/messagefactories/streammessagefactory.cpp
+END
+genericmessagefactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/messagefactories/genericmessagefactory.cpp
+END
+connectionmessagefactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/rtmp/messagefactories/connectionmessagefactory.cpp
+END

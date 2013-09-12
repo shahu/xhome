@@ -1,0 +1,79 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/packing/debian
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+fix_paths.sed
+file
+
+
+
+
+2013-08-26T05:49:36.000000Z
+f57a1e96f1a3001df47900eb19dde15b
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+cleanup.sh
+file
+
+
+
+
+2013-08-26T05:49:36.000000Z
+86435643eba6e9c1555710f96f6cc2d3
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+debian
+dir
+
+build_package.sh
+file
+
+
+
+
+2013-08-26T05:49:36.000000Z
+6bb7c4d0e5d6fd61afd1b17f3fb77100
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+README.txt
+file
+
+
+
+
+2013-08-26T05:49:36.000000Z
+5f88b722e8b2c2e6a09244af2f71bed4
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

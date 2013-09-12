@@ -1,0 +1,85 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/applications/misc_flash_resources/FridgeMagnets
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+fridge.fla
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+44993b2964644d95f78a30872c177ec0
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+has-props
+
+caurina
+dir
+
+Fridge.as
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+2440fd3355088eb18d613f81f5712ebc
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+com
+dir
+
+fridge.swf
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+4968fc5f8a1fb3664988e04610515a6d
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+has-props
+
+pointy.ttf
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+769c29a525fb56a412ed65b92720db5f
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+has-props
+

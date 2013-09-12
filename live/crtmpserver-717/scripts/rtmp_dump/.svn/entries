@@ -1,0 +1,53 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/scripts/rtmp_dump
+http://192.168.0.94/repositories/r02
+
+
+
+2012-08-24T10:51:44.650304Z
+62606
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+rtmp_batch_dump.sh
+file
+
+
+
+
+2013-08-26T05:49:33.000000Z
+0d99d2c0f4e196cbe0ec5427b71f9f10
+2012-08-24T10:51:44.650304Z
+62606
+jasonyang
+
+rtmpdump
+file
+
+
+
+
+2013-08-26T05:49:33.000000Z
+31a4a1b725c8df7f3a17bb6df4783a99
+2012-08-24T10:51:44.650304Z
+62606
+jasonyang
+has-props
+

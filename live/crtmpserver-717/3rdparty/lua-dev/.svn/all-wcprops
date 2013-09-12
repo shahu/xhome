@@ -1,0 +1,317 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev
+END
+lauxlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lauxlib.c
+END
+ldebug.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ldebug.c
+END
+lauxlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lauxlib.h
+END
+ldebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ldebug.h
+END
+ltablib.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ltablib.c
+END
+liolib.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/liolib.c
+END
+lstrlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lstrlib.c
+END
+lualib.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lualib.h
+END
+ldo.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ldo.c
+END
+ldump.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ldump.c
+END
+ldo.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ldo.h
+END
+loslib.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/loslib.c
+END
+lundump.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lundump.c
+END
+ldblib.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ldblib.c
+END
+lundump.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lundump.h
+END
+lmem.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lmem.c
+END
+lmathlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lmathlib.c
+END
+lstate.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lstate.c
+END
+ltm.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ltm.c
+END
+lvm.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lvm.c
+END
+lmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lmem.h
+END
+lstate.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lstate.h
+END
+ltm.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ltm.h
+END
+ltable.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ltable.c
+END
+lvm.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lvm.h
+END
+llex.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/llex.c
+END
+lgc.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lgc.c
+END
+loadlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/loadlib.c
+END
+lfunc.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lfunc.c
+END
+lparser.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lparser.c
+END
+lopcodes.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lopcodes.c
+END
+ltable.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/ltable.h
+END
+llex.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/llex.h
+END
+lgc.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lgc.h
+END
+lfunc.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lfunc.h
+END
+lopcodes.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lopcodes.h
+END
+lbaselib.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lbaselib.c
+END
+lparser.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lparser.h
+END
+lzio.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lzio.c
+END
+linit.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/linit.c
+END
+lobject.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lobject.c
+END
+llimits.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/llimits.h
+END
+lstring.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lstring.c
+END
+lzio.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lzio.h
+END
+lapi.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lapi.c
+END
+lcode.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lcode.c
+END
+lua.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lua.h
+END
+lobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lobject.h
+END
+lstring.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lstring.h
+END
+lapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lapi.h
+END
+lcode.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/lcode.h
+END
+luaconf.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/3rdparty/lua-dev/luaconf.h
+END

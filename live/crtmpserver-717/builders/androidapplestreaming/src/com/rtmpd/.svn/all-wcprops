@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/androidapplestreaming/src/com/rtmpd
+END
+MessageBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/androidapplestreaming/src/com/rtmpd/MessageBase.java
+END
+CommandsInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/androidapplestreaming/src/com/rtmpd/CommandsInterface.java
+END
+MessageContextList.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/androidapplestreaming/src/com/rtmpd/MessageContextList.java
+END
+VideoCallbacks.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/androidapplestreaming/src/com/rtmpd/VideoCallbacks.java
+END
+MessageInfoListStreams.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/androidapplestreaming/src/com/rtmpd/MessageInfoListStreams.java
+END
+MessageContextCreate.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/builders/androidapplestreaming/src/com/rtmpd/MessageContextCreate.java
+END

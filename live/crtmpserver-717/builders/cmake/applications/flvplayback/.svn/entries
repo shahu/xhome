@@ -1,0 +1,55 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/builders/cmake/applications/flvplayback
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+users.lua
+file
+
+
+
+
+2013-08-26T05:49:34.000000Z
+00b2d57270fba90cee6559f4832bea36
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+mediaFolder
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2013-08-26T05:49:34.000000Z
+0f4f414c7d28d0492ee63be68c8aec60
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

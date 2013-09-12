@@ -1,0 +1,40 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/vm/include/vmlua
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+basevmlua.h
+file
+
+
+
+
+2013-09-05T02:27:20.000000Z
+205439ff3778719c5cbaf9b7281a39b6
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+

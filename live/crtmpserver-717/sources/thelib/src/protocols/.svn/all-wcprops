@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repositories/r02/!svn/ver/97950/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols
+END
+defaultprotocolfactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/defaultprotocolfactory.cpp
+END
+baseprotocolfactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/baseprotocolfactory.cpp
+END
+protocolfactorymanager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/protocolfactorymanager.cpp
+END
+tcpprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/tcpprotocol.cpp
+END
+udpprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/udpprotocol.cpp
+END
+protocolmanager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/protocolmanager.cpp
+END
+baseprotocol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repositories/r02/!svn/ver/97895/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/src/protocols/baseprotocol.cpp
+END

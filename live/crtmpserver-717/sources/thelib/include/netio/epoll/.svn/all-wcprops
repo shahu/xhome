@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll
+END
+inboundnamedpipecarrier.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/inboundnamedpipecarrier.h
+END
+stdiocarrier.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/stdiocarrier.h
+END
+tcpcarrier.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/tcpcarrier.h
+END
+iohandlermanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/iohandlermanager.h
+END
+udpcarrier.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/udpcarrier.h
+END
+iohandlermanagertoken.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/iohandlermanagertoken.h
+END
+tcpconnector.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/tcpconnector.h
+END
+iohandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/iohandler.h
+END
+tcpacceptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/tcpacceptor.h
+END
+iotimer.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repositories/r02/!svn/ver/57959/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/netio/epoll/iotimer.h
+END

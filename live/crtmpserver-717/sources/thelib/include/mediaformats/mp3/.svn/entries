@@ -1,0 +1,52 @@
+8
+
+dir
+97961
+http://192.168.0.94/repositories/r02/Cloud/HPC/trunk/crtmpserver-717/sources/thelib/include/mediaformats/mp3
+http://192.168.0.94/repositories/r02
+
+
+
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+653f6834-aab9-c84e-bf21-5865e8c89758
+
+id3parser.h
+file
+
+
+
+
+2013-09-05T02:27:23.000000Z
+aff614e59de096ae61c875484a1fab1f
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
+mp3document.h
+file
+
+
+
+
+2013-09-05T02:27:23.000000Z
+a5872a10f14d476880e39f17e1db2938
+2012-07-09T05:25:27.598494Z
+57959
+jasonyang
+
