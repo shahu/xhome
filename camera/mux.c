@@ -67,7 +67,7 @@ static AVStream *add_stream(AVFormatContext *oc, AVCodec **codec,
          * of which frame timestamps are represented. For fixed-fps content,
          * timebase should be 1/framerate and timestamp increments should be
          * identical to 1. */
-        c->time_base.den = STREAM_FRAME_RATE;
+        c->time_base.den = 1000;//STREAM_FRAME_RATE;
         c->time_base.num = 1;
         c->gop_size      = 12; /* emit one intra frame every twelve frames at most */
         c->pix_fmt       = STREAM_PIX_FMT;
@@ -656,6 +656,7 @@ int pushFrame(FrameInfo_t * fram, char* data)
 
 	pkt.data = data;//todo: cache
 	pkt.size = fram->size;
+	pkt.pts = fram->timestamp;// in miniseconds
 	
     /* Write the compressed frame to the media file. */
     ret = av_interleaved_write_frame(oc, &pkt);
