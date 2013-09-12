@@ -1,0 +1,34 @@
+8
+
+dir
+7421
+http://192.168.0.94/repositories/r01/p2p/trunk/project/server_mod/cutter
+http://192.168.0.94/repositories/r01
+
+
+
+2013-07-12T08:58:26.798178Z
+7161
+tadycao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b3a1389e-2159-5c43-9038-463bf877d0d9
+
+cutterworker
+dir
+
+cutterprocessor
+dir
+
