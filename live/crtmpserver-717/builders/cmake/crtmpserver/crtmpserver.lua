@@ -4,15 +4,15 @@ configuration=
 {
 	-- if true, the server will run as a daemon.
 	-- NOTE: all console appenders will be ignored if this is a daemon
-	daemon=false,
+	daemon=true,
 	-- the OS's path separator. Used in composing paths
 	pathSeparator="/",
 
 	-- this is the place where all the logging facilities are setted up
 	-- you can add/remove any number of locations
 	streamMonitor={
-		monitorPath="/home/logs/crtmpserver/streamMonitor.log",
-		speedPath="/home/logs/crtmpserver/speed.log",
+		monitorPath="/mnt/resource/logs/crtmpserver/streamMonitor.log",
+		speedPath="/mnt/resource/logs/crtmpserver/speed.log",
 	},
 	logAppenders=
 	{
@@ -34,10 +34,10 @@ configuration=
 			type="file",
 			level=6,
 			-- the file where the log messages are going to land
-			fileName="/home/logs/crtmpserver/crtmpserver",
+			fileName="/mnt/resource/logs/crtmpserver/crtmpserver",
 			--newLineCharacters="\r\n",
 			fileHistorySize=10,
-			fileLength=1024*256*100,
+			fileLength=512*1024*1024,
 			singleLine=true
 		}
 	},
@@ -48,7 +48,6 @@ configuration=
 		-- this is the root directory of all applications
 		-- usually this is relative to the binary execuable
 		rootDirectory="applications",
-		
 		
 		--this is where the applications array starts
 		{
@@ -97,6 +96,37 @@ configuration=
 			}
 		},
 		{
+			description="Forwarding streams to another RTMP server",
+			name="proxypublish",
+			protocol="dynamiclinklibrary",
+			acceptors = 
+			{
+				{
+					ip="0.0.0.0",
+					port=6667,
+					protocol="inboundLiveFlv",
+					waitForMetadata=true
+				},
+			},
+
+			abortOnConnectError=false,
+
+			targetServers = {
+				{ 
+					targetUri="rtmp://42.159.6.172:1936/push", 
+					targetStreamType="live"
+				}
+			},
+ 
+			externalStreams = 
+			{
+				{
+					--uri="rtmp://123.123.123.123/live/myStream",
+					forceTcp=true
+				}
+			}
+		},
+		{
 			description="FLV Playback Sample",
 			name="flvplayback",
 			protocol="dynamiclinklibrary",
@@ -116,6 +146,12 @@ configuration=
 					ip="0.0.0.0",
 					port=6666,
 					protocol="inboundLiveFlv",
+					waitForMetadata=true,
+				},
+				{
+					ip="0.0.0.0",
+					port=554,
+					protocol="inboundRtsp",
 					waitForMetadata=true,
 				},
 			},
